@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "homepage",
+  "author": "Daniel Li <inflmts@gmail.com>",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "serve": "vite",
+    "build": "vite build",
+    "generate-tile": "node generate-tile.js"
+  },
+  "devDependencies": {
+    "vite": "^5.3.2"
+  }
+}
