@@ -6,8 +6,7 @@
   "license": "MIT",
   "scripts": {
     "serve": "vite",
-    "build": "vite build",
-    "generate-tile": "node generate-tile.js"
+    "build": "vite build"
   },
   "devDependencies": {
     "vite": "^5.3.2"
