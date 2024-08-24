@@ -5,45 +5,74 @@
   <meta name="viewport" content="width=device-width">
   <title>INFINITELIMITS</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="banner.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script type="module" src="banner.js"></script>
 </head>
 <body>
   <!-- InfiniteLimits Logo 5.4 -- Daniel Li, Mar 13 2024 -->
   <header>
-    <svg class="banner" viewBox="-250 -400 500 800">
-      <g>
-        <polygon fill="#ffe00080" points="-100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8"/>
-        <polygon fill="#ff780080" points="100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8"/>
-        <polygon fill="#ffe000" points="-100,-52.8 -144,-35.2 -100,74.8 -100,24.8 -119.862,-24.855 -100,-32.8"/>
-        <polygon fill="#ffe000" points="-10,-110 -80,-110 -80,-28.8 -10,-56.8"/>
-        <polygon fill="#ffe000" points="-10,-36.8 -80,-8.8 -80,124.8 -10,96.8"/>
-        <polygon fill="#ff7800" points="10,36.8 80,8.8 80,-124.8 10,-96.8"/>
-        <polygon fill="#ff7800" points="10,110 80,110 80,28.8 10,56.8"/>
-        <polygon fill="#ff7800" points="100,52.8 144,35.2 100,-74.8 100,-24.8 119.862,24.855 100,32.8"/>
-      </g>
+    <svg class="banner banner-wide" viewBox="-400 -200 800 400">
+      <defs>
+        <g id="banner-logo" fill="white">
+          <polygon opacity="0.5" points="-100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8" />
+          <polygon opacity="0.5" points="100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8" />
+          <polygon points="-100,-52.8 -144,-35.2 -100,74.8 -100,24.8 -119.862,-24.855 -100,-32.8" />
+          <polygon points="-10,-110 -80,-110 -80,-28.8 -10,-56.8" />
+          <polygon points="-10,-36.8 -80,-8.8 -80,124.8 -10,96.8" />
+          <polygon points="10,36.8 80,8.8 80,-124.8 10,-96.8" />
+          <polygon points="10,110 80,110 80,28.8 10,56.8" />
+          <polygon points="100,52.8 144,35.2 100,-74.8 100,-24.8 119.862,24.855 100,32.8" />
+        </g>
+        <text id="banner-subtitle"
+              fill="white"
+              font-size="20"
+              font-weight="normal"></text>
+      </defs>
+      <use href="#banner-logo" transform="translate(-210,0)" />
       <text
-        x="0"
-        y="220"
-        fill="#ffffff"
-        text-anchor="middle"
-        font-size="40"
-        font-weight="700"
-        letter-spacing="5">
-        INFINITELIMITS
+        x="-30" y="-15"
+        fill="white"
+        font-size="80"
+        font-weight="bold"
+        letter-spacing="4">
+        INFINITE
       </text>
       <text
-        x="0"
-        y="250"
-        fill="#ffffff"
-        text-anchor="middle"
-        font-size="20"
-        font-weight="400"
-        letter-spacing="0">
-        ZERO <tspan opacity="0.5">TO</tspan> INFINITY
+        x="-30" y="65"
+        fill="white"
+        opacity="0.5"
+        font-size="80"
+        font-weight="bold"
+        letter-spacing="4">
+        LIMITS
       </text>
+      <use href="#banner-subtitle" x="0" y="110" />
+    </svg>
+    <svg class="banner banner-slim" viewBox="-250 -400 500 800">
+      <use href="#banner-logo" transform="translate(0,-100)" />
+      <text
+        x="0" y="150"
+        fill="white"
+        font-size="80"
+        font-weight="bold"
+        text-anchor="middle"
+        letter-spacing="4">
+        INFINITE
+      </text>
+      <text
+        x="0" y="230"
+        fill="white"
+        opacity="0.5"
+        font-size="80"
+        font-weight="bold"
+        text-anchor="middle"
+        letter-spacing="4">
+        LIMITS
+      </text>
+      <use href="#banner-subtitle" x="0" y="275" text-anchor="middle" />
     </svg>
   </header>
 </body>
