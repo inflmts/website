@@ -5,75 +5,120 @@
   <meta name="viewport" content="width=device-width">
   <title>INFINITELIMITS</title>
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="banner.css">
+  <link rel="stylesheet" href="main.css">
+  <script type="module" src="about.js"></script>
+
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <script type="module" src="banner.js"></script>
 </head>
 <body>
-  <!-- InfiniteLimits Logo 5.4 -- Daniel Li, Mar 13 2024 -->
-  <header>
-    <svg class="banner banner-wide" viewBox="-400 -200 800 400">
-      <defs>
-        <g id="banner-logo" fill="white">
-          <polygon opacity="0.5" points="-100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8" />
-          <polygon opacity="0.5" points="100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8" />
-          <polygon points="-100,-52.8 -144,-35.2 -100,74.8 -100,24.8 -119.862,-24.855 -100,-32.8" />
-          <polygon points="-10,-110 -80,-110 -80,-28.8 -10,-56.8" />
-          <polygon points="-10,-36.8 -80,-8.8 -80,124.8 -10,96.8" />
-          <polygon points="10,36.8 80,8.8 80,-124.8 10,-96.8" />
-          <polygon points="10,110 80,110 80,28.8 10,56.8" />
-          <polygon points="100,52.8 144,35.2 100,-74.8 100,-24.8 119.862,24.855 100,32.8" />
-        </g>
-        <text id="banner-subtitle"
-              fill="white"
-              font-size="20"
-              font-weight="normal"></text>
-      </defs>
-      <use href="#banner-logo" transform="translate(-210,0)" />
-      <text
-        x="-30" y="-15"
-        fill="white"
-        font-size="80"
-        font-weight="bold"
-        letter-spacing="4">
-        INFINITE
-      </text>
-      <text
-        x="-30" y="65"
-        fill="white"
-        opacity="0.5"
-        font-size="80"
-        font-weight="bold"
-        letter-spacing="4">
-        LIMITS
-      </text>
-      <use href="#banner-subtitle" x="0" y="110" />
-    </svg>
-    <svg class="banner banner-slim" viewBox="-250 -400 500 800">
-      <use href="#banner-logo" transform="translate(0,-100)" />
-      <text
-        x="0" y="150"
-        fill="white"
-        font-size="80"
-        font-weight="bold"
-        text-anchor="middle"
-        letter-spacing="4">
-        INFINITE
-      </text>
-      <text
-        x="0" y="230"
-        fill="white"
-        opacity="0.5"
-        font-size="80"
-        font-weight="bold"
-        text-anchor="middle"
-        letter-spacing="4">
-        LIMITS
-      </text>
-      <use href="#banner-subtitle" x="0" y="275" text-anchor="middle" />
-    </svg>
-  </header>
+  <!-- hidden svg document for common elements -->
+  <svg style="display: none">
+    <!-- InfiniteLimits Logo 5.4 -- Daniel Li, Mar 13 2024 -->
+    <g id="banner-logo-template" fill="white">
+      <polygon opacity="0.5" points="-100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8" />
+      <polygon opacity="0.5" points="100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8" />
+      <polygon points="-100,-52.8 -144,-35.2 -100,74.8 -100,24.8 -119.862,-24.855 -100,-32.8" />
+      <polygon points="-10,-110 -80,-110 -80,-28.8 -10,-56.8" />
+      <polygon points="-10,-36.8 -80,-8.8 -80,124.8 -10,96.8" />
+      <polygon points="10,36.8 80,8.8 80,-124.8 10,-96.8" />
+      <polygon points="10,110 80,110 80,28.8 10,56.8" />
+      <polygon points="100,52.8 144,35.2 100,-74.8 100,-24.8 119.862,24.855 100,32.8" />
+    </g>
+  </svg>
+
+  <!-- this banner is shown for wide screens -->
+  <svg class="banner" viewBox="-400 -200 800 400" style="max-height: 600px">
+    <use href="#banner-logo-template" transform="translate(-210,0)" />
+    <text x="-30" y="-15"
+          fill="white"
+          font-size="80"
+          font-weight="bold"
+          letter-spacing="4">
+      INFINITE
+    </text>
+    <text x="-30" y="65"
+          fill="white"
+          font-size="80"
+          font-weight="bold"
+          letter-spacing="4">
+      LIMITS
+    </text>
+    <text x="-25" y="115"
+          fill="white"
+          opacity="0.75"
+          font-size="30"
+          font-weight="normal">
+      ZERO TO INFINITY
+    </text>
+  </svg>
+
+  <!-- this banner is shown for thin screens -->
+  <svg class="banner banner-slim" viewBox="-250 -350 500 700" style="max-height: 1050px">
+    <use href="#banner-logo-template" transform="translate(0,-100)" />
+    <text x="0" y="150"
+          fill="white"
+          font-size="80"
+          font-weight="bold"
+          text-anchor="middle"
+          letter-spacing="4">
+      INFINITE
+    </text>
+    <text x="0" y="230"
+          fill="white"
+          font-size="80"
+          font-weight="bold"
+          text-anchor="middle"
+          letter-spacing="4">
+      LIMITS
+    </text>
+    <text x="0" y="280"
+          fill="white"
+          opacity="0.75"
+          font-size="30"
+          font-weight="normal"
+          text-anchor="middle">
+      ZERO TO INFINITY
+    </text>
+  </svg>
+
+  <button id="about-open-button">?</button>
+
+  <div id="about-wrapper" style="display: none">
+    <article id="about">
+      <div class="button-bar">
+        <h1>About</h1>
+        <button id="about-close-button">&#x2715;</button>
+      </div>
+      <p>
+        My name is Daniel Li.
+        I'm a hobbyist programmer, artist, and musician who likes aesthetics and open source.
+        I'm currently studying computer science at the University of Florida.
+      </p>
+      <p>
+        InfiniteLimits is my brand name.
+        To me, it represents a juxtaposition of two competing ideas:
+        first, on the existence of physical, social, and psychological boundaries on all aspects of life &mdash;
+        &ldquo;limits,&rdquo; if you will.
+        One should always accept that difficulties will be waiting at every turn.
+        But second, on the interminable possibility of growth
+        and humanity's unfailing ambition to extend these boundaries &mdash;
+        our &ldquo;infinite&rdquo; capacity to learn, grow, and fight for positive change,
+        to overcome the barriers that hold us back.
+      </p>
+      <p>
+        The fifth InfiniteLimits logo highlights hidden unity:
+        the slanted rectangle created by the borders of the geometry
+        represents the order we strive to find in the world
+        and the relationships we seek through it.
+      </p>
+      <p>
+        This site was made using <a href="https://vitejs.dev">Vite</a>.
+      </p>
+    </article>
+  </div>
 </body>
 </html>

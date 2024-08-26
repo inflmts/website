@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  position: absolute;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #101012;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(158deg, #ff61b0, #ffb56f);
+  overflow: hidden;
+}
+
+body.banner-uf {
+  background-image: linear-gradient(158deg, #fa4616 20%, #0021a5 80%);
+}
+
+.banner {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.banner-slim {
+  display: none;
+}
+
+@media (max-aspect-ratio: 8/7) {
+  .banner {
+    display: none;
+  }
+
+  .banner-slim {
+    display: block;
+  }
+}
+
+h1,
+p {
+  margin: 1em 0;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.button-bar {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: end;
+  justify-content: end;
+  margin: 1rem 0;
+}
+
+.button-bar h1 {
+  margin: 0 1rem 0 0;
+  flex-grow: 1;
+}
+
+#about-open-button,
+#about-close-button {
+  display: block;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: none;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  padding: 0;
+}
+
+#about-open-button {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  border: 0.125rem solid white;
+  color: white;
+}
+
+#about-open-button:hover,
+#about-open-button:active {
+  background-color: white;
+  color: black;
+}
+
+#about-close-button {
+  border: 0.125rem solid black;
+  color: black;
+}
+
+#about-close-button:hover,
+#about-close-button:active {
+  background-color: black;
+  color: white;
+}
+
+#about-wrapper {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #0008;
+}
+
+#about {
+  background-color: white;
+  max-width: 60ch;
+  line-height: 1.5;
+  margin: 0.75rem;
+  padding: 0.5rem 1.5rem;
+  overflow: auto;
+}
+
+@media (max-width: 50ch) {
+  #about {
+    margin: 0;
+    padding: 0 1rem;
+    width: 100%;
+    height: 100%;
+  }
+}
