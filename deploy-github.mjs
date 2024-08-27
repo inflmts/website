@@ -20,6 +20,9 @@ const commitMessage = `Update to ${version}`;
 
 process.chdir('dist');
 
+// create .nojekyll
+fs.closeSync(fs.openSync('.nojekyll', 'w'));
+
 fs.rmSync('.git', { force: true, recursive: true });
 execCommand('git', ['init', '-b', 'main', '.']);
 execCommand('git', ['add', '.']);
