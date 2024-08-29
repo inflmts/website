@@ -13,8 +13,11 @@ body {
   margin: 0;
   font-family: 'Inter', sans-serif;
   background-color: #101012;
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
-  background-image: linear-gradient(158deg, #ff61b0, #ffb56f);
+  background-image: url(pattern.svg),
+                    linear-gradient(158deg, #ff61b0, #ffb56f);
   overflow: hidden;
 }
 
