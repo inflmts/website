@@ -29,11 +29,3 @@ and force-pushes it to
 ```
 pnpm run deploy-github
 ```
-
-## Generating Assets
-
-When editing `generate-pattern.mjs`, regenerate `pattern.svg` using:
-
-```
-pnpm run generate-pattern
-```

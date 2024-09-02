@@ -8,8 +8,7 @@
   "scripts": {
     "serve": "vite",
     "build": "vite build",
-    "deploy-github": "node deploy-github.mjs",
-    "generate-pattern": "node generate-pattern.mjs"
+    "deploy-github": "node deploy-github.mjs"
   },
   "devDependencies": {
     "vite": "^5.3.2"
