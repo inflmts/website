@@ -1,30 +1,28 @@
 #!/usr/bin/env node
 // deploy the site to GitHub
 
-import fs from 'fs';
 import { execFileSync } from 'child_process';
-import { join } from 'path';
+import fs from 'fs';
 
-function execCommand(command, args) {
+function run(command, ...args) {
   execFileSync(command, args, { stdio: 'inherit' });
 }
 
-const repoURL = 'https://github.com/inflmts/inflmts.github.io';
+function getOutput(command, ...args) {
+  return execFileSync(command, args, { stdio: ['inherit', 'pipe', 'inherit'], encoding: 'utf8' });
+}
 
-const version = execFileSync('git', ['describe', '--always', '--dirty'], {
-  stdio: ['ignore', 'pipe', 'inherit'],
-  encoding: 'utf8'
-});
+const distDir = 'dist';
+const targetURL = 'https://github.com/inflmts/inflmts.github.io';
+const targetBranch = 'gh-pages';
 
+const version = getOutput('git', 'describe', '--always', '--dirty').trim();
 const commitMessage = `Update to ${version}`;
 
-process.chdir('dist');
-
-// create .nojekyll
+process.chdir(distDir);
 fs.closeSync(fs.openSync('.nojekyll', 'w'));
-
 fs.rmSync('.git', { force: true, recursive: true });
-execCommand('git', ['init', '-b', 'main', '.']);
-execCommand('git', ['add', '.']);
-execCommand('git', ['commit', '-m', commitMessage]);
-execCommand('git', ['push', '--force', repoURL, 'main']);
+run('git', 'init', '-b', targetBranch, '.');
+run('git', 'add', '.');
+run('git', 'commit', '-m', commitMessage);
+run('git', 'push', '--force', targetURL, targetBranch);
