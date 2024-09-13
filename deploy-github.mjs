@@ -8,16 +8,10 @@ function run(command, ...args) {
   execFileSync(command, args, { stdio: 'inherit' });
 }
 
-function getOutput(command, ...args) {
-  return execFileSync(command, args, { stdio: ['inherit', 'pipe', 'inherit'], encoding: 'utf8' });
-}
-
 const distDir = 'dist';
 const targetURL = 'https://github.com/inflmts/inflmts.github.io';
 const targetBranch = 'gh-pages';
-
-const version = getOutput('git', 'describe', '--always', '--dirty').trim();
-const commitMessage = `Update to ${version}`;
+const commitMessage = 'Update website';
 
 process.chdir(distDir);
 fs.closeSync(fs.openSync('.nojekyll', 'w'));
