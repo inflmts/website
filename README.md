@@ -1,9 +1,8 @@
-# InfiniteLimits Homepage
+# InfiniteLimits Website
 
-_Daniel Li_
-
-This is the source repository for my personal website,
-located at <https://inflmts.github.io>.
+This is the source code for <https://inflmts.com>, the personal website of
+Daniel Li. The site is hosted on GitHub Pages from
+<https://github.com/inflmts/inflmts.github.io>.
 
 ## Build
 
@@ -21,11 +20,10 @@ pnpm run build
 
 ## Deploy
 
-The `deploy-github.mjs` script creates a temporary Git repository in `dist`,
-creates a commit with the output files,
-and force-pushes it to
-<https://github.com/inflmts/inflmts.github.io>:
+After building, `scripts/deploy.mjs` can be used to deploy the site to the
+`gh-pages` branch of the repository:
 
 ```
-pnpm run deploy-github
+pnpm run deploy
 ```
+

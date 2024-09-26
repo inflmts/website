@@ -1,0 +1,24 @@
+<!--
+  Site icon for the InfiniteLimits website
+
+  Author:   Daniel Li
+  Date:     Sep 24 2024
+
+  InfiniteLimits Logo version 5.4
+
+  Author:   Daniel Li
+  Date:     Mar 13 2024
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <rect width="256" height="256" fill="black" />
+  <g transform="translate(128, 128) scale(0.64)" fill="white">
+    <polygon opacity="0.75" points="-100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8" />
+    <polygon opacity="0.75" points="100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8" />
+    <polygon points="-100,-52.8 -144,-35.2 -100,74.8 -100,24.8 -119.862,-24.855 -100,-32.8" />
+    <polygon points="-10,-110 -80,-110 -80,-28.8 -10,-56.8" />
+    <polygon points="-10,-36.8 -80,-8.8 -80,124.8 -10,96.8" />
+    <polygon points="10,36.8 80,8.8 80,-124.8 10,-96.8" />
+    <polygon points="10,110 80,110 80,28.8 10,56.8" />
+    <polygon points="100,52.8 144,35.2 100,-74.8 100,-24.8 119.862,24.855 100,32.8" />
+  </g>
+</svg>

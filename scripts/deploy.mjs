@@ -12,9 +12,11 @@ const distDir = 'dist';
 const targetURL = 'https://github.com/inflmts/inflmts.github.io';
 const targetBranch = 'gh-pages';
 const commitMessage = 'Update website';
+const cname = 'inflmts.com';
 
 process.chdir(distDir);
-fs.closeSync(fs.openSync('.nojekyll', 'w'));
+fs.writeFileSync('.nojekyll', Buffer.alloc(0));
+fs.writeFileSync('CNAME', cname);
 fs.rmSync('.git', { force: true, recursive: true });
 run('git', 'init', '-b', targetBranch, '.');
 run('git', 'add', '.');
