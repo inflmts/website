@@ -6,7 +6,7 @@
   <title>INFINITELIMITS</title>
   <link rel="icon" href="build/favicon.ico">
   <link rel="stylesheet" href="main.css">
-  <script type="module" src="about.js"></script>
+  <!--<script type="module" src="about.js"></script>-->
 
   <link rel="preconnect" href="https://rsms.me/">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
@@ -14,23 +14,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<body>
-  <!-- hidden svg document for common elements -->
-  <svg style="display: none">
-    <!-- InfiniteLimits Logo 5.4 -- Daniel Li, Mar 13 2024 -->
-    <g id="banner-logo-template" fill="white">
-      <polygon opacity="0.5" points="-100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8" />
-      <polygon opacity="0.5" points="100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8" />
-      <polygon points="-100,-52.8 -144,-35.2 -100,74.8 -100,24.8 -119.862,-24.855 -100,-32.8" />
-      <polygon points="-10,-110 -80,-110 -80,-28.8 -10,-56.8" />
-      <polygon points="-10,-36.8 -80,-8.8 -80,124.8 -10,96.8" />
-      <polygon points="10,36.8 80,8.8 80,-124.8 10,-96.8" />
-      <polygon points="10,110 80,110 80,28.8 10,56.8" />
-      <polygon points="100,52.8 144,35.2 100,-74.8 100,-24.8 119.862,24.855 100,32.8" />
-    </g>
-  </svg>
+<body class="bg-zinc-900">
+  <nav class="flex text-white">
+    <a class="p-4 hover:text-zinc-300" href="https://github.com/inflmts">GitHub</a>
+  </nav>
 
-  <!-- this banner is shown for wide screens -->
+  <header>
+    <svg class="block mx-auto w-80" viewBox="-200 -200 400 400">
+      <g fill="white">
+        <polygon opacity="0.5" points="-100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8" />
+        <polygon opacity="0.5" points="100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8" />
+        <polygon points="-100,-52.8 -144,-35.2 -100,74.8 -100,24.8 -119.862,-24.855 -100,-32.8" />
+        <polygon points="-10,-110 -80,-110 -80,-28.8 -10,-56.8" />
+        <polygon points="-10,-36.8 -80,-8.8 -80,124.8 -10,96.8" />
+        <polygon points="10,36.8 80,8.8 80,-124.8 10,-96.8" />
+        <polygon points="10,110 80,110 80,28.8 10,56.8" />
+        <polygon points="100,52.8 144,35.2 100,-74.8 100,-24.8 119.862,24.855 100,32.8" />
+      </g>
+    </svg>
+    <h1 class="text-6xl text-center text-white font-display font-bold">INFINITE</h1>
+    <h1 class="text-6xl text-center text-white/50 font-display font-bold">LIMITS</h1>
+  </header>
+
+  <!--
   <svg class="banner" viewBox="-400 -200 800 400" style="max-height: 640px">
     <use href="#banner-logo-template" transform="translate(-210,0)" />
     <text x="-30" y="-15"
@@ -56,7 +62,6 @@
     </text>
   </svg>
 
-  <!-- this banner is shown for thin screens -->
   <svg class="banner banner-slim" viewBox="-250 -350 500 700" style="max-height: 1120px">
     <use href="#banner-logo-template" transform="translate(0,-100)" />
     <text x="0" y="150"
@@ -120,5 +125,6 @@
       </p>
     </article>
   </div>
+  -->
 </body>
 </html>
