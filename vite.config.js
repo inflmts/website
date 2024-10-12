@@ -1,6 +1,8 @@
 import fs from 'fs';
-import { encode as encodeIco } from 'ico-endec';
+import ico from 'ico-endec';
+import { marked } from 'marked';
 import sharp from 'sharp';
+import tailwindcss from 'tailwindcss';
 
 async function mtime(file) {
   try {
@@ -43,7 +45,7 @@ function faviconPlugin() {
     ));
 
     // combine the images into the ico file
-    const icoBuffer = await encodeIco(buffers);
+    const icoBuffer = await ico.encode(buffers);
     await fs.promises.writeFile(destFile, icoBuffer);
   }
 
@@ -75,11 +77,27 @@ function faviconPlugin() {
 
 }
 
+/** @type {import('vite').UserConfig} */
 export default {
   // make paths relative
   base: '',
   appType: 'mpa',
   plugins: [
     faviconPlugin()
-  ]
+  ],
+  css: {
+    postcss: {
+      plugins: [
+        tailwindcss()
+      ]
+    }
+  },
+  build: {
+    rollupOptions: {
+      input: [
+        'index.html',
+        '404.html'
+      ]
+    }
+  }
 };
