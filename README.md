@@ -1,10 +1,8 @@
 # InfiniteLimits Website
 
-This is the source code for <https://inflmts.com>, the personal website of
-Daniel Li. The site is hosted on GitHub Pages from
-<https://github.com/inflmts/inflmts.github.io>.
+This is the source code for <https://inflmts.com>.
 
-## Build
+## Setup
 
 Install dependencies:
 
@@ -12,7 +10,15 @@ Install dependencies:
 pnpm install
 ```
 
-Build using Vite:
+Start the Vite server:
+
+```
+pnpm run dev
+```
+
+## Build
+
+Install dependencies, then build using Vite:
 
 ```
 pnpm run build

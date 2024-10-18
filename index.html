@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html class="size-full">
+<html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>INFINITELIMITS</title>
   <link rel="icon" href="build/favicon.ico">
   <link rel="stylesheet" href="main.css">
@@ -11,63 +11,174 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+  <script type="module" src="src/main.js"></script>
 </head>
-<body class="size-full bg-zinc-900">
+<body class="bg-zinc-900 text-zinc-300">
 
-<header class="fixed w-full h-16 bg-zinc-900 border-b border-zinc-700">
+<%
+function link(href, text) {
+  %><a href="<%= href %>" class="text-blue-400 hover:underline"><%= text %></a><%
+}
+%>
+
+<!-- navbar -->
+
+<header class="fixed z-10 w-full h-16 bg-zinc-900 border-b border-zinc-700">
 <div class="h-full flex max-w-7xl mx-auto">
-  <a href="./" class="h-full flex items-center px-4">
-    <svg viewBox="-200 -200 400 400" class="size-12">
-      <use href="#logo" />
+  <a href="#banner" class="h-full flex items-center px-4">
+    <svg viewBox="-200 -200 400 400" class="size-8 bg-white">
+      <g fill="black">
+        <polygon opacity="0.5" points="-100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8" />
+        <polygon opacity="0.5" points="100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8" />
+        <polygon points="-100,-52.8 -144,-35.2 -100,74.8 -100,24.8 -119.862,-24.855 -100,-32.8" />
+        <polygon points="-10,-110 -80,-110 -80,-28.8 -10,-56.8" />
+        <polygon points="-10,-36.8 -80,-8.8 -80,124.8 -10,96.8" />
+        <polygon points="10,36.8 80,8.8 80,-124.8 10,-96.8" />
+        <polygon points="10,110 80,110 80,28.8 10,56.8" />
+        <polygon points="100,52.8 144,35.2 100,-74.8 100,-24.8 119.862,24.855 100,32.8" />
+      </g>
     </svg>
-    <div class="font-display font-bold text-xl text-white ml-2">INFINITELIMITS</div>
+    <div class="font-display font-bold text-xl text-white ml-3">INFINITELIMITS</div>
   </a>
-  <div class="h-full flex grow items-center text-white justify-end">
-    <a class="block px-2 hover:text-amber-400" href="https://inflmts.com/fastadd">fastadd</a>
-    <a class="block px-2 hover:text-amber-400" href="https://github.com/inflmts">github</a>
+  <div class="relative h-full flex grow items-center text-white justify-end pr-2">
+    <button id="menu-button" class="h-16 px-2 sm:hidden">menu</button>
   </div>
+  <nav id="menu"
+       class="absolute top-full w-full hidden text-white
+              sm:static sm:flex sm:h-full sm:grow sm:items-center sm:justify-end sm:pr-2">
+<% for (const [href, text] of [
+     ['https://inflmts.com/fastadd/', 'fastadd'],
+     ['https://github.com/inflmts', 'github']
+   ]) { %>
+    <a class="block px-4 py-1 hover:text-amber-400 sm:px-2 sm:py-0" href="<%= href %>"><%= text %></a>
+<% } %>
+  </nav>
 </div>
 </header>
 
-<div class="banner w-full h-[60rem] overflow-hidden pt-16 flex flex-col items-center justify-center">
-  <svg class="size-[25rem]"
-       viewBox="-200 -200 400 400">
-    <g id="logo" fill="white">
-      <polygon opacity="0.5" points="-100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8" />
-      <polygon opacity="0.5" points="100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8" />
-      <polygon points="-100,-52.8 -144,-35.2 -100,74.8 -100,24.8 -119.862,-24.855 -100,-32.8" />
-      <polygon points="-10,-110 -80,-110 -80,-28.8 -10,-56.8" />
-      <polygon points="-10,-36.8 -80,-8.8 -80,124.8 -10,96.8" />
-      <polygon points="10,36.8 80,8.8 80,-124.8 10,-96.8" />
-      <polygon points="10,110 80,110 80,28.8 10,56.8" />
-      <polygon points="100,52.8 144,35.2 100,-74.8 100,-24.8 119.862,24.855 100,32.8" />
-    </g>
-  </svg>
-  <div class="text-7xl text-white font-display font-bold">
-    INFINITELIMITS
+<main class="sm:block">
+
+<!-- banner -->
+
+<div id="banner"
+     class="pt-16 w-full h-screen overflow-hidden
+            flex flex-col items-center justify-center">
+  <div class="relative mt-32">
+    <div class="absolute left-1/2 top-1/2 animate-[40s_spin_linear_infinite_reverse]">
+      <div class="absolute origin-center w-[40rem] h-[40rem] -left-[20rem] -top-[20rem]"
+           style="mask: radial-gradient(20rem, black, transparent)">
+      <div class="absolute left-[20rem] top-[20rem]">
+        <% for (let angle = 0; angle < 360; angle += 60) { %>
+          <div class="absolute" style="transform: rotate(<%= angle %>deg)">
+            <div class="absolute beam w-10 h-80 -bottom-12 -translate-x-56 skew-y-[30deg]"></div>
+          </div>
+        <% } %>
+      </div>
+      </div>
+      <svg class="absolute size-[26rem] -translate-x-1/2 -translate-y-1/2"
+           viewBox="-10 -10 20 20">
+<%
+function hex(r) {
+  const coords = new Array(6);
+  for (let i = 0; i < 6; i++) {
+    const angle = i * Math.PI / 3;
+    coords[i] = `${r * Math.sin(angle)},${r * Math.cos(angle)}`;
+  }
+  return coords.join(' ');
+}
+%>
+        <polygon class="fill-gray-700" points="<%= hex(10) %>" />
+        <polygon class="fill-gray-600" points="<%= hex(9.5) %>" />
+      </svg>
+    </div>
+    <svg class="size-[16rem] drop-shadow-lg" viewBox="-200 -200 400 400">
+      <polygon class="fill-zinc-800" points="200,-200 -150,-200 -200,-150 -200,200 150,200 200,150" />
+      <polygon class="fill-zinc-900" points="190,-190 -145,-190 -190,-145 -190,190 145,190 190,145" />
+      <g fill="white">
+        <polygon opacity="0.5" points="-100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8" />
+        <polygon opacity="0.5" points="100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8" />
+        <polygon points="-100,-52.8 -144,-35.2 -100,74.8 -100,24.8 -119.862,-24.855 -100,-32.8" />
+        <polygon points="-10,-110 -80,-110 -80,-28.8 -10,-56.8" />
+        <polygon points="-10,-36.8 -80,-8.8 -80,124.8 -10,96.8" />
+        <polygon points="10,36.8 80,8.8 80,-124.8 10,-96.8" />
+        <polygon points="10,110 80,110 80,28.8 10,56.8" />
+        <polygon points="100,52.8 144,35.2 100,-74.8 100,-24.8 119.862,24.855 100,32.8" />
+      </g>
+    </svg>
   </div>
-  <div class="text-2xl text-black bg-zinc-200 font-display mt-8 px-8">
+  <div class="relative mt-12 text-white text-center font-display font-bold mx-12 text-7xl">
+    INFINITE<wbr>LIMITS
+  </div>
+  <div class="relative mt-6 mb-16 text-2xl text-black text-center bg-zinc-200 font-display px-8">
     ZERO TO INFINITY
   </div>
 </div>
 
-<article class="bg-zinc-900 px-4 py-24">
-<div class="mx-auto max-w-3xl space-y-4 text-zinc-300">
+<!-- quote -->
 
-<h1 class="font-display font-bold text-5xl mb-8 text-white">DANIEL LI</h1>
+<div class="bg-zinc-800 px-4 py-16 text-center">
+<div class="mx-auto max-w-3xl">
+  <blockquote>
+    &ldquo;Your will is the most accurate way to predict the future.&rdquo;
+  </blockquote>
+  <p class="text-zinc-500">&mdash; Elon Musk</p>
+</div>
+</div>
+
+<!-- main content -->
+
+<article class="px-4 py-24">
+<div class="mx-auto max-w-3xl space-y-6">
+
+<h1 class="font-display font-bold text-5xl text-white pb-4 mb-8 border-b border-zinc-500">
+  DANIEL LI
+</h1>
 <p>
   I'm a hobbyist programmer, artist, and musician who likes aesthetics and open source.
   I'm currently studying computer science at the University of Florida.
 </p>
 <p>
+  Why InfiniteLimits?
+  To me, this phrase is a juxtaposition of two competing ideas.
+  The first is the existence of physical, social, and psychological boundaries on all aspects of life &mdash;
+  &ldquo;limits,&rdquo; if you will.
+  One can only accept that difficulties will be waiting at every turn,
+  that there will always remain something tantalizingly out of reach.
+  But the second is the interminable possibility of growth
+  and humanity's unfailing ambition to extend these boundaries &mdash;
+  our &ldquo;infinite&rdquo; capacity to learn, grow, and fight for positive change,
+  to overcome the barriers that hold us back.
+</p>
+
+<section class="p-8 border border-zinc-500">
+  <h2 class="font-display font-bold text-2xl text-white mb-4">UNDER CONSTRUCTION</h2>
+  <p>
+    This site is a work in progress.
+    Creating a website is not a difficult task;
+    all you need is some HTML, CSS, and JavaScript knowledge.
+    Creating a website that looks good, in our current time, is also not that hard;
+    there many templates, libraries, and resources out there for creating beautiful web experiences.
+    Making a site that is creative and unique, on the other hand, requires more effort.
+  </p>
+</section>
+
+<p>
   This site was made using
-  <a href="https://vite.dev" class="text-blue-400 hover:underline">Vite</a>
+  <% link('https://vite.dev', 'Vite') %>
   and
-  <a href="https://tailwindcss.com" class="text-blue-400 hover:underline">Tailwind CSS</a>.
+  <% link('https://tailwindcss.com', 'Tailwind CSS') %>.
+  Love the fonts?
+  Props to the developers of
+  <% link('https://tribby.com/fonts/barlow/', 'Barlow') %>
+  and
+  <% link('https://rsms.me/inter/', 'Inter') %>.
+  See the source code on
+  <% link('https://github.com/inflmts/inflmts.github.io', 'GitHub') %>.
 </p>
 
 </div>
 </article>
+</main>
 
 </body>
 </html>
