@@ -2,7 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-.banner {
-  background-image: radial-gradient(30rem, theme(colors.zinc.900 / 75%), theme(colors.zinc.900)),
-                    linear-gradient(158deg, theme(colors.pink.400), theme(colors.amber.300));
+main {
+  background-image: radial-gradient(30rem at 50% calc(50vh - theme(spacing.8)), theme(colors.gray.800), theme(colors.zinc.900));
+}
+
+@keyframes beam {
+  to { background-position: 0 theme(spacing.6); }
+}
+
+.beam {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" opacity="0.5" d="M0,1 V2 H2 V1 Z"/></svg>');
+  background-size: theme(spacing.6);
+  animation: 1s beam linear infinite;
+}
+
+.tile {
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2 2"><path fill="white" opacity="0.5" d="M0,0 V2 H1 V0 Z"/></svg>');
 }
