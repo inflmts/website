@@ -1,5 +1,5 @@
 import tailwindcss from 'tailwindcss';
-import favicon from './lib/favicon.js';
+import icon from './lib/icon.js';
 import template from './lib/template.js';
 
 /** @type {import('vite').UserConfig} */
@@ -7,7 +7,7 @@ export default {
   appType: 'mpa',
   plugins: [
     template(),
-    favicon()
+    icon()
   ],
   css: {
     postcss: {
