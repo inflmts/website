@@ -9,8 +9,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "clean": "node scripts/clean.mjs",
-    "deploy": "node scripts/deploy.mjs"
+    "clean": "node scripts/clean.js",
+    "deploy": "node scripts/deploy.js"
   },
   "devDependencies": {
     "ejs": "^3.1.10",

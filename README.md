@@ -1,18 +1,13 @@
-# InfiniteLimits Website
+# The InfiniteLimits Website
 
 This is the source code for <https://inflmts.com>.
 
 ## Setup
 
-Install dependencies:
+Install dependencies, then start the dev server:
 
 ```
 pnpm install
-```
-
-Start the Vite server:
-
-```
 pnpm run dev
 ```
 
@@ -21,12 +16,13 @@ pnpm run dev
 Install dependencies, then build using Vite:
 
 ```
+pnpm install
 pnpm run build
 ```
 
 ## Deploy
 
-After building, `scripts/deploy.mjs` can be used to deploy the site to the
+After building, the `deploy` script can be used to deploy the site to the
 `gh-pages` branch of the repository:
 
 ```

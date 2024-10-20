@@ -4,6 +4,7 @@ import template from './lib/template.js';
 
 /** @type {import('vite').UserConfig} */
 export default {
+  base: '',
   appType: 'mpa',
   plugins: [
     template(),
