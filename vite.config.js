@@ -20,8 +20,7 @@ export default {
   build: {
     rollupOptions: {
       input: [
-        'index.html',
-        '404.html'
+        'index.html'
       ]
     }
   }
