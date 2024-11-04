@@ -22,10 +22,13 @@ pnpm run build
 
 ## Deploy
 
-After building, the `deploy` script can be used to deploy the site to the
-`gh-pages` branch of the repository:
+To deploy to GitHub Pages, a tool like
+[gh-pages](https://npmjs.com/package/gh-pages) or my own
+[@inflmts/gh-pages](https://npmjs.com/package/@inflmts/gh-pages) can be used.
+For example:
 
 ```
-pnpm run deploy
+pnpm add -g @inflmts/gh-pages
+gh-pages dist
 ```
 

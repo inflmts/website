@@ -23,26 +23,10 @@ function link(href, text) {
 
 <!-- navbar -->
 
-<header class="hidden">
-<div class="h-full flex max-w-7xl mx-auto">
-  <a href="#banner" class="h-full flex items-center px-4">
-    <svg viewBox="-200 -200 400 400" class="size-8 fill-white">
-      <polygon opacity="0.5" points="-100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8" />
-      <polygon opacity="0.5" points="100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8" />
-      <polygon points="-100,-52.8 -144,-35.2 -100,74.8 -100,24.8 -119.862,-24.855 -100,-32.8" />
-      <polygon points="-10,-110 -80,-110 -80,-28.8 -10,-56.8" />
-      <polygon points="-10,-36.8 -80,-8.8 -80,124.8 -10,96.8" />
-      <polygon points="10,36.8 80,8.8 80,-124.8 10,-96.8" />
-      <polygon points="10,110 80,110 80,28.8 10,56.8" />
-      <polygon points="100,52.8 144,35.2 100,-74.8 100,-24.8 119.862,24.855 100,32.8" />
-    </svg>
-    <div class="font-display font-bold text-xl text-white border-l border-zinc-500 pl-3 ml-1 leading-none">
-      INFINITELIMITS
-    </div>
-  </a>
-  <div class="relative h-full flex grow items-center text-white justify-end pr-4 sm:hidden">
+<header class="absolute w-full h-16 bg-black/20">
+  <div class="relative h-full flex items-center text-white justify-end pr-4 sm:hidden">
     <button id="menu-button">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" class="size-8">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="size-8 fill-white">
         <rect x="4" y="6" width="24" height="2" />
         <rect x="4" y="14" width="24" height="2" />
         <rect x="4" y="22" width="24" height="2" />
@@ -51,139 +35,162 @@ function link(href, text) {
   </div>
   <nav id="menu"
        class="absolute top-full w-full hidden text-white py-4
-              sm:static sm:flex sm:h-full sm:grow sm:justify-end sm:py-0 sm:pr-2">
+              sm:static sm:flex sm:h-full sm:justify-center sm:py-0">
 <% for (const [href, text] of [
-     ['https://inflmts.com/fastadd/', 'fastadd'],
+     ['https://fastadd.inflmts.com', 'fastadd'],
      ['https://github.com/inflmts', 'github']
    ]) { %>
-    <a class="flex px-4 py-1 items-center hover:text-amber-400 sm:px-2 sm:py-0" href="<%= href %>">
-      <div><%= text %></div>
+    <a class="flex px-6 py-1.5 items-center group sm:px-1 sm:py-0" href="<%= href %>">
+      <div class="px-1 py-0.5 group-hover:bg-white group-hover:text-black"><%= text %></div>
     </a>
 <% } %>
   </nav>
-</div>
 </header>
 
-<div id="top-test"></div>
-
-<main class="sm:visible">
+<main class="sm:block">
 
 <!-- banner -->
 
-<div id="banner"
-     class="pt-16 w-full min-h-screen overflow-hidden
-            flex flex-col items-center justify-center
-            bg-[radial-gradient(40rem,theme(colors.gray.800),theme(colors.zinc.900))]">
-  <div class="relative mt-32">
-    <div class="absolute left-1/2 top-1/2 animate-[40s_spin_linear_infinite_reverse]">
-      <div class="absolute origin-center w-[40rem] h-[40rem] -left-[20rem] -top-[20rem]"
-           style="mask: radial-gradient(20rem, black, transparent)">
-      <div class="absolute left-[20rem] top-[20rem]">
-        <% for (let angle = 0; angle < 360; angle += 60) { %>
-          <div class="absolute" style="transform: rotate(<%= angle %>deg)">
-            <div class="absolute beam w-10 h-80 -bottom-12 -translate-x-56 skew-y-[30deg]"></div>
-          </div>
-        <% } %>
-      </div>
-      </div>
-      <svg class="absolute size-[26rem] -translate-x-1/2 -translate-y-1/2"
-           viewBox="-10 -10 20 20">
-<%
-function hex(r) {
-  const coords = new Array(6);
-  for (let i = 0; i < 6; i++) {
-    const angle = i * Math.PI / 3;
-    coords[i] = `${r * Math.sin(angle)},${r * Math.cos(angle)}`;
-  }
-  return coords.join(' ');
-}
-%>
-        <polygon class="fill-gray-700" points="<%= hex(10) %>" />
-        <polygon class="fill-gray-600" points="<%= hex(9.6) %>" />
-      </svg>
-    </div>
-    <svg class="size-[16rem] drop-shadow-lg" viewBox="-200 -200 400 400">
-      <polygon class="fill-zinc-800" points="200,-200 -150,-200 -200,-150 -200,200 150,200 200,150" />
-      <polygon class="fill-zinc-900" points="190,-190 -145,-190 -190,-145 -190,190 145,190 190,145" />
-      <g fill="white">
-        <polygon opacity="0.5" points="-100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8" />
-        <polygon opacity="0.5" points="100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8" />
-        <polygon points="-100,-52.8 -144,-35.2 -100,74.8 -100,24.8 -119.862,-24.855 -100,-32.8" />
-        <polygon points="-10,-110 -80,-110 -80,-28.8 -10,-56.8" />
-        <polygon points="-10,-36.8 -80,-8.8 -80,124.8 -10,96.8" />
-        <polygon points="10,36.8 80,8.8 80,-124.8 10,-96.8" />
-        <polygon points="10,110 80,110 80,28.8 10,56.8" />
-        <polygon points="100,52.8 144,35.2 100,-74.8 100,-24.8 119.862,24.855 100,32.8" />
-      </g>
+<section id="banner" class="pb-16 w-full bg-gradient-to-br from-pink-500 to-yellow-400">
+  <div class="pt-32 pb-16 min-h-screen flex flex-col items-center justify-center
+              md:flex-row">
+    <svg class="size-64 bg-gradient-to-br from-zinc-700 to-black border-2 border-white drop-shadow-xl
+                md:mt-0"
+         viewBox="-200 -200 400 400">
+      <defs>
+        <linearGradient id="logo-gradient" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#ffffff" />
+          <stop offset="1" stop-color="#d4d4d8" />
+        </linearGradient>
+      </defs>
+      <path fill="white" opacity="0.5"
+            d="M -100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8 Z
+               M 100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8 Z" />
+      <path fill="url(#logo-gradient)"
+            d="M -100,-52.8 -144,-35.2 -100,74.8 -100,24.8 -119.862,-24.855 -100,-32.8 Z
+               M -10,-110 -80,-110 -80,-28.8 -10,-56.8 Z
+               M -10,-36.8 -80,-8.8 -80,124.8 -10,96.8 Z
+               M 10,36.8 80,8.8 80,-124.8 10,-96.8 Z
+               M 10,110 80,110 80,28.8 10,56.8 Z
+               M 100,52.8 144,35.2 100,-74.8 100,-24.8 119.862,24.855 100,32.8 Z" />
     </svg>
+    <div class="mt-12 mx-12
+                text-center font-display font-bold text-7xl
+                text-transparent bg-clip-text bg-gradient-to-b from-white to-white/50
+                md:text-8xl md:text-left md:m-0 md:ml-16">
+      INFINITE<br>LIMITS
+    </div>
   </div>
-  <div class="relative mt-12 text-white text-center font-display font-bold mx-12 text-7xl">
-    INFINITE<wbr>LIMITS
-  </div>
-  <div class="relative mt-6 mb-16 text-2xl text-black text-center bg-zinc-200 font-display px-8">
-    ZERO TO INFINITY
-  </div>
-</div>
+</section>
 
 <!-- quote -->
 
-<div class="bg-zinc-800 px-4 py-20 border-y border-zinc-700 text-center">
-<div class="mx-auto max-w-3xl">
-  <blockquote>
-    &ldquo;Your will is the most accurate way to predict the future.&rdquo;
-  </blockquote>
-  <p class="text-zinc-500">&mdash; Elon Musk</p>
+<div class="relative">
+  <svg class="absolute -bottom-px w-full max-h-16" viewBox="0 0 10 1" preserveAspectRatio="none">
+    <path fill="black" d="M 10,1 10,0 0,1 Z" />
+  </svg>
 </div>
+<section class="px-6 py-32 text-center bg-black">
+  <div class="mx-auto max-w-3xl">
+    <blockquote>
+      &ldquo;Your will is the most accurate way to predict the future.&rdquo;
+    </blockquote>
+    <p class="text-zinc-500">&mdash;&nbsp;Elon Musk</p>
+  </div>
+</section>
+<div class="relative">
+  <svg class="absolute -top-px w-full max-h-16" viewBox="0 0 10 1" preserveAspectRatio="none">
+    <path fill="black" d="M 0,0 10,0 0,1 Z" />
+  </svg>
 </div>
 
 <!-- main content -->
 
-<article class="px-4 py-24">
-<div class="mx-auto max-w-3xl space-y-8">
-
-<h1 class="font-display font-bold text-5xl text-white pb-4 mb-8 border-b border-zinc-500">
-  DANIEL LI
-</h1>
-<p>
-  I'm a hobbyist programmer, artist, and musician who likes aesthetics and open source.
-  I'm currently studying computer science at the University of Florida.
-</p>
-<p>
-  Why InfiniteLimits?
-  To me, this phrase is a juxtaposition of two competing ideas.
-  The first is the existence of physical, social, and psychological boundaries on all aspects of life &mdash;
-  &ldquo;limits,&rdquo; if you will.
-  One can only accept that difficulties will be waiting at every turn,
-  that there will always remain something tantalizingly out of reach.
-  But the second is the interminable possibility of growth
-  and humanity's unfailing ambition to extend these boundaries &mdash;
-  our &ldquo;infinite&rdquo; capacity to learn, grow, and fight for positive change,
-  to overcome the barriers that hold us back.
-</p>
-
-<section class="p-8 border border-zinc-500">
-  <h2 class="font-display font-bold text-2xl text-white mb-4">UNDER CONSTRUCTION</h2>
-  <p>
-    This site is a work in progress.
+<section class="px-6 pt-48 pb-24 mx-auto max-w-2xl">
+  <h1 class="font-display font-bold text-5xl text-center pb-12 text-zinc-300">
+    ABOUT ME
+  </h1>
+  <div class="w-full h-1 bg-gradient-to-r from-yellow-500 to-orange-500 mb-12"></div>
+  <p class="text-center">
+    My name is Daniel Li.
+    I'm a hobbyist programmer, artist, and musician who likes aesthetics and open source.
+    I'm currently studying computer science at the University of Florida.
   </p>
 </section>
 
-<p>
-  This site was made using
-  <% link('https://vite.dev', 'Vite') %>
-  and
-  <% link('https://tailwindcss.com', 'Tailwind CSS') %>.
-  Love the fonts?
-  Props to the developers of
-  <% link('https://tribby.com/fonts/barlow/', 'Barlow') %>
-  and
-  <% link('https://rsms.me/inter/', 'Inter') %>.
-  See the source code on
-  <% link('https://github.com/inflmts/inflmts.com', 'GitHub') %>.
-</p>
+<section class="relative">
+  <div class="absolute size-full bg-tile bg-center bg-[length:1.25rem]"
+       style="mask: radial-gradient(16rem, black, transparent)"></div>
+  <div class="relative py-24 flex flex-col items-center">
+    <div class="relative">
+      <svg class="size-80" viewBox="-80 -80 160 160" fill="white">
+        <!-- bottom edge (90) -->
+        <path opacity="0.5" d="M -55,43.301 15,43.301 25,25.981 -45,25.981 Z" />
+        <!-- bottom-right edge (50) -->
+        <path opacity="0.8" d="M 35,43.301 50,17.321 40,0 15,43.301 Z" />
+        <!-- top-right edge (50) -->
+        <path opacity="0.5" d="M 60,0 45,-25.981 25,-25.981 50,17.321 Z" />
+        <!-- top edge (60) -->
+        <path opacity="0.8" d="M 35,-43.301 -25,-43.301 -15,-25.981 45,-25.981 Z" />
+        <!-- center kite -->
+        <path opacity="0.8" d="M 25,0 20,-8.660 -5,0 20,8.660 Z" />
+      </svg>
+      <div class="absolute left-1/2 top-1/2 font-mono font-bold text-white/50">
+        <div class="absolute" style="top: 5.5rem; right: 1.25rem">9</div>
+        <div class="absolute" style="top: 2.5rem; left: 6.25rem">5</div>
+        <div class="absolute" style="bottom: 2.5rem; left: 6.25rem">5</div>
+        <div class="absolute" style="bottom: 5.5rem; left: 0.75rem">6</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-</div>
-</article>
+<section class="px-4 pt-24 pb-24 mx-auto max-w-xl text-center">
+  <div class="relative md:right-16 px-8 py-12 bg-zinc-800">
+    <h2 class="font-display font-bold text-3xl mb-8 text-zinc-300">
+      ZERO
+    </h2>
+    <p class="text-zinc-400">
+      We are bound by limits&nbsp;&mdash;
+      physical, social, and psychological boundaries on all aspects of life.
+      No matter how careful we are, failure is inevitable.
+    </p>
+  </div>
+  <div class="relative md:left-16 px-8 py-12 bg-zinc-700 mt-8">
+    <h2 class="font-display font-bold text-3xl mb-8 text-zinc-200">
+      TO INFINITY
+    </h2>
+    <p class="text-zinc-300">
+      But these limits are only temporary.
+      We possess an unfailing ambition to extend these boundaries&nbsp;&mdash;
+      an &ldquo;infinite&rdquo; capacity to learn, grow, and fight for positive change,
+      to overcome the barriers that hold us back.
+    </p>
+  </div>
+</section>
+
+<svg class="w-full max-h-16" viewBox="0 0 10 1" preserveAspectRatio="none">
+  <path fill="black" d="M 10,1 10,0 0,1 Z" />
+</svg>
+<section class="bg-black">
+  <div class="px-6 py-20 mx-auto max-w-2xl text-center">
+    <p>
+      This site was made using
+      <% link('https://vite.dev', 'Vite') %>
+      and
+      <% link('https://tailwindcss.com', 'Tailwind CSS') %>.
+      Love the fonts?
+      Props to the developers of
+      <% link('https://tribby.com/fonts/barlow/', 'Barlow') %>
+      and
+      <% link('https://rsms.me/inter/', 'Inter') %>.
+      See the source code on
+      <% link('https://github.com/inflmts/inflmts.com', 'GitHub') %>.
+    </p>
+  </div>
+</section>
+<div class="h-1 bg-gradient-to-r from-yellow-500 to-orange-500"></div>
+
 </main>
 
 </body>
