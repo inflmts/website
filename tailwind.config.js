@@ -1,8 +1,8 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 
 const tile = `
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 27.712">
-  <path fill="none" stroke="white" opacity="0.2" d="M0,0 H16 L0,27.712 H16 Z M0,13.856 H16"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 28">
+  <path fill="none" stroke="white" opacity="0.2" d="M0,0 H16 L0,28 H16 Z M0,14 H16"/>
 </svg>`;
 
 /** @type {import('tailwindcss').Config} */

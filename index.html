@@ -16,6 +16,11 @@
 <body class="bg-zinc-900 text-zinc-300">
 
 <%
+const nav = [
+  ['https://fastadd.inflmts.com', 'fastadd'],
+  ['https://github.com/inflmts', 'github']
+];
+
 function polygon(n, r, offset = 0) {
   const vertices = [];
   offset *= Math.PI / 180;
@@ -31,11 +36,13 @@ function link(href, text) {
 }
 %>
 
+<header>
+
 <!-- navbar -->
 
-<header class="absolute w-full h-16 bg-zinc-800/20 z-10">
-  <div class="relative h-full flex items-center text-white justify-end pr-4 sm:hidden">
-    <button id="menu-button">
+<div id="navbar" class="absolute w-full bg-zinc-800/20 z-10">
+  <div class="h-16 flex sm:hidden items-center text-white justify-end pr-4">
+    <button id="menu-open-button">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="size-8" fill="white">
         <rect x="4" y="6" width="24" height="2" />
         <rect x="4" y="14" width="24" height="2" />
@@ -43,21 +50,37 @@ function link(href, text) {
       </svg>
     </button>
   </div>
-  <nav id="menu"
-       class="absolute top-full w-full hidden text-white py-4
-              sm:static sm:flex sm:h-full sm:justify-center sm:py-0">
-<% for (const [href, text] of [
-     ['https://fastadd.inflmts.com', 'fastadd'],
-     ['https://github.com/inflmts', 'github']
-   ]) { %>
-    <a class="flex px-6 py-1.5 items-center group sm:px-1 sm:py-0" href="<%= href %>">
+  <nav class="h-16 hidden sm:flex justify-center text-white">
+    <% for (const [href, text] of nav) { %>
+    <a class="flex px-1 items-center group" href="<%= href %>">
       <div class="px-1 py-0.5 group-hover:bg-white group-hover:text-black"><%= text %></div>
     </a>
-<% } %>
+    <% } %>
   </nav>
+</div>
+
+<!-- mobile menu -->
+
+<div id="menu" class="hidden">
+  <div class="h-16 flex items-center text-white justify-end pr-4 bg-zinc-800">
+    <button id="menu-close-button">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="size-8">
+        <path fill="none" stroke="white" stroke-width="2" d="M 6,6 26,26 M 26,6 6,26" />
+      </svg>
+    </button>
+  </div>
+  <nav class="py-4">
+    <% for (const [href, text] of nav) { %>
+    <a class="block px-4 py-1 group" href="<%= href %>">
+      <div class="px-1 py-0.5 group-hover:bg-white group-hover:text-black"><%= text %></div>
+    </a>
+    <% } %>
+  </nav>
+</div>
+
 </header>
 
-<main class="sm:block">
+<main>
 
 <!-- banner -->
 
@@ -149,29 +172,21 @@ function link(href, text) {
 </section>
 
 <section class="relative">
-  <div class="absolute size-full bg-tile bg-center bg-[length:1.25rem]"
-       style="mask: radial-gradient(16rem, black, transparent)"></div>
-  <div class="relative py-24 flex flex-col items-center">
-    <div class="relative">
-      <svg class="size-80" viewBox="-80 -80 160 160" fill="white">
-        <!-- bottom edge (90) -->
-        <path opacity="0.5" d="M -55,43.301 15,43.301 25,25.981 -45,25.981 Z" />
-        <!-- bottom-right edge (50) -->
-        <path opacity="0.8" d="M 35,43.301 50,17.321 40,0 15,43.301 Z" />
-        <!-- top-right edge (50) -->
-        <path opacity="0.5" d="M 60,0 45,-25.981 25,-25.981 50,17.321 Z" />
-        <!-- top edge (60) -->
-        <path opacity="0.8" d="M 35,-43.301 -25,-43.301 -15,-25.981 45,-25.981 Z" />
-        <!-- center kite -->
-        <path opacity="0.8" d="M 25,0 20,-8.660 -5,0 20,8.660 Z" />
-      </svg>
-      <div class="absolute left-1/2 top-1/2 font-mono font-bold text-white/50">
-        <div class="absolute" style="top: 5.5rem; right: 1.25rem">9</div>
-        <div class="absolute" style="top: 2.5rem; left: 6.25rem">5</div>
-        <div class="absolute" style="bottom: 2.5rem; left: 6.25rem">5</div>
-        <div class="absolute" style="bottom: 5.5rem; left: 0.75rem">6</div>
-      </div>
-    </div>
+  <div class="absolute size-full bg-tile bg-center bg-[length:1.25rem]"></div>
+  <div class="relative py-24 flex flex-col items-center
+              bg-gradient-to-b from-zinc-900 via-zinc-900/0 to-zinc-900">
+    <svg class="size-80" viewBox="-80 -80 160 160" fill="white">
+      <!-- bottom edge (90) -->
+      <path opacity="0.5" d="M -55,43.301 15,43.301 25,25.981 -45,25.981 Z" />
+      <!-- bottom-right edge (50) -->
+      <path opacity="0.8" d="M 35,43.301 50,17.321 40,0 15,43.301 Z" />
+      <!-- top-right edge (50) -->
+      <path opacity="0.5" d="M 60,0 45,-25.981 25,-25.981 50,17.321 Z" />
+      <!-- top edge (60) -->
+      <path opacity="0.8" d="M 35,-43.301 -25,-43.301 -15,-25.981 45,-25.981 Z" />
+      <!-- center kite -->
+      <path opacity="0.8" d="M 25,0 20,-8.660 -5,0 20,8.660 Z" />
+    </svg>
   </div>
 </section>
 
@@ -222,6 +237,5 @@ function link(href, text) {
 <div class="h-1 bg-gradient-to-r from-yellow-500 to-orange-500"></div>
 
 </main>
-
 </body>
 </html>
