@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.link {
+  @apply text-orange-400 underline hover:no-underline hover:text-white hover:bg-orange-500;
+}
