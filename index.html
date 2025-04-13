@@ -1,88 +1,77 @@
 <!DOCTYPE html>
-<html class="size-full">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>INFINITELIMITS</title>
-  <link rel="icon" href="build/icon.ico">
-  <link rel="preconnect" href="https://rsms.me/">
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="icon.svg">
   <link rel="stylesheet" href="main.css">
-  <script type="module" src="src/main.js"></script>
 </head>
-<body class="size-full bg-fixed bg-gradient-to-br from-pink-500 to-yellow-400">
-
-<%
-  function link(text, href) {
-    %><a class="text-zinc-600 transition underline hover:text-white hover:bg-zinc-600" href="<%= href %>"><%= text %></a><%
-  }
-%>
-
-<header class="size-full flex flex-col md:flex-row items-center justify-center">
-  <div>
-    <svg class="size-80 sm:size-96 lg:size-[28rem]"
-         viewBox="-250 -250 500 500" stroke-width="2">
-      <rect fill="none" stroke="white" opacity="0.2" x="-175" y="-175" width="350" height="350" transform="rotate(15)" />
-      <rect fill="none" stroke="white" opacity="0.4" x="-175" y="-175" width="350" height="350" transform="rotate(45)" />
-      <rect fill="none" stroke="white" opacity="0.7" x="-175" y="-175" width="350" height="350" transform="rotate(75)" />
-      <path fill="white" opacity="0.5"
-            d="M -100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8 Z
-               M 100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8 Z" />
-      <path fill="white"
-            d="M -100,-52.8 -144,-35.2 -100,74.8 -100,24.8 -119.862,-24.855 -100,-32.8 Z
-               M -10,-110 -80,-110 -80,-28.8 -10,-56.8 Z
-               M -10,-36.8 -80,-8.8 -80,124.8 -10,96.8 Z
-               M 10,36.8 80,8.8 80,-124.8 10,-96.8 Z
-               M 10,110 80,110 80,28.8 10,56.8 Z
-               M 100,52.8 144,35.2 100,-74.8 100,-24.8 119.862,24.855 100,32.8 Z" />
+<body>
+  <header>
+    <svg class="logo" viewBox="-250 -250 500 500">
+      <g fill="none" stroke="white" stroke-width="2">
+        <rect opacity="0.3" x="-175" y="-175" width="350" height="350" transform="rotate(15)" />
+        <rect opacity="0.6" x="-175" y="-175" width="350" height="350" transform="rotate(45)" />
+        <rect opacity="0.9" x="-175" y="-175" width="350" height="350" transform="rotate(75)" />
+      </g>
+      <path fill="white" opacity="0.5" d="
+         M -100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8 Z
+         M 100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8 Z" />
+      <path fill="white" d="
+         M -100,-52.8 -144,-35.2 -100,74.8 -100,24.8 -119.862,-24.855 -100,-32.8 Z
+         M -10,-110 -80,-110 -80,-28.8 -10,-56.8 Z
+         M -10,-36.8 -80,-8.8 -80,124.8 -10,96.8 Z
+         M 10,36.8 80,8.8 80,-124.8 10,-96.8 Z
+         M 10,110 80,110 80,28.8 10,56.8 Z
+         M 100,52.8 144,35.2 100,-74.8 100,-24.8 119.862,24.855 100,32.8 Z" />
+      </g>
     </svg>
-  </div>
+  </header>
 
-  <div class="font-display contents md:block md:ml-8">
-    <div id="title" class="font-bold text-7xl sm:text-8xl lg:text-9xl text-white text-center md:text-left">
-      INFINITE
-      <br>
-      LIMITS
+  <main>
+    <div class="spacer"></div>
+    <h1 class="title">
+      <svg viewBox="0 0 55 10">
+        <title>INFINITE</title>
+        <path fill="#308" d="M0,0
+          M0,0    V10 h2 V0 Z
+          m3.5,0  V10 h2 V4.5 l6,5.5 V0 h-2 V5.5 Z
+          m9.5,0  V10 h2 V6 h4 v-2 h-4 V2 h6 V0 Z
+          m9.0,0  V10 h2 V0 Z
+          m3.5,0  V10 h2 V4.5 l6,5.5 V0 h-2 V5.5 Z
+          m9.5,0  V10 h2 V0 Z
+          m3.0,0  V2 h3 V10 h2 V2 h3 V0 Z
+          m9.0,0  V10 h8 V8 h-6 V6 h4 V4 h-4 V2 h6 V0 Z
+          " />
+      </svg>
+      <svg viewBox="0 0 44 10">
+        <title>LIMITS</title>
+        <path fill="black" d="
+          M0,0    V10 h8 V8 h-6 V0 Z
+          m9.0,0  V10 h2 V0 Z
+          m3.5,0  V10 h2 V5 l3,3 l3,-3 V10 h2 V0 l-5,5 Z
+          m11.5,0 V10 h2 V0 Z
+          m3.0,0  V2 h3 V10 h2 V2 h3 V0 Z
+          m9.0,0  m8,3.5 q0,-3.5,-4,-3.5 q-4,0,-4,3 c0,4,6,2,6,4 q0,1,-2,1 q-2,0,-2,-1.5 h-2 q0,3.5,4,3.5 q4,0,4,-3 c0,-4,-6,-2,-6,-4 q0,-1,2,-1 q2,0,2,1.5 Z
+          " />
+      </svg>
+    </h1>
+    <p class="subtitle">ZERO TO INFINITY</p>
+    <div class="content">
+      <p>
+        I am Daniel Li &mdash; a programmer, artist, and
+        musician who likes aesthetics and open source. I'm currently studying
+        computer science at the University of Florida.
+      </p>
+      <p>
+        <a href="https://github.com/inflmts">GitHub</a>
+        |
+        <a href="https://github.com/inflmts/website">Source</a>
+      </p>
     </div>
-    <p id="subtitle" class="font-bold text-4xl mt-4 text-white/75">
-      ZERO TO INFINITY
-    </p>
-  </div>
-</header>
+  </main>
 
-<section class="pale w-full py-16">
-  <div class="p-6 max-w-2xl mx-auto space-y-6 bg-white/50">
-    <section class="px-12 py-12 mb-8 bg-white/50">
-      <blockquote>
-        &ldquo;Your will is the most accurate way to predict the future.&rdquo;
-      </blockquote>
-      <p class="text-zinc-500">&mdash;&nbsp;Elon Musk</p>
-    </section>
-    <p>
-      My name is <strong>Daniel Li</strong>. I'm a programmer, artist, and
-      musician who likes aesthetics and open source. I'm currently majoring in
-      computer science at the University of Florida.
-    </p>
-    <p>
-      This site was made using
-      <% link('Vite', 'https://vite.dev') %>,
-      <% link('Tailwind', 'https://tailwindcss.com') %>,
-      and
-      <% link('EJS', 'https://ejs.co') %>.
-      The source code is on
-      <% link('GitHub', 'https://github.com/inflmts/website') %>.
-      Love the fonts? Check out
-      <% link('Barlow', 'https://tribby.com/fonts/barlow/') %>
-      and
-      <% link('Inter', 'https://rsms.me/inter/') %>.
-    </p>
-  </div>
-</section>
-
-<div id="buttons" class="absolute top-4 left-4 right-4 flex justify-end gap-2"></div>
-
+  <!--<div id="buttons" class="absolute top-4 left-4 right-4 flex justify-end gap-2"></div>-->
 </body>
 </html>
