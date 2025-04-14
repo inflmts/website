@@ -1,6 +1,8 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
+  border: 0;
 }
 
 html, body {
@@ -9,17 +11,18 @@ html, body {
 }
 
 body {
-  position: relative;
-  font-family: sans-serif;
+  font-family: 'Inter', sans-serif;
+  background-color: white;
 }
 
 a {
   font-weight: bold;
   text-decoration: underline;
-  color: #60c;
+  color: #ff0050;
 }
 
 a:hover {
+  text-decoration: none;
   color: black;
 }
 
@@ -27,37 +30,26 @@ svg {
   display: block;
 }
 
-.background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-header {
+.left {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
   padding: 4rem 0;
-  background-image: linear-gradient(to bottom right, #000, #60c);
+  background-image: linear-gradient(135deg, black, #ff0050);
 }
 
 .logo {
   width: 20rem;
 }
 
-main {
-  padding: 0 2rem;
-}
-
 .spacer {
   height: 4rem;
 }
 
-.title svg {
+.title {
   margin: 0 auto 1rem auto;
-  height: 4rem;
+  height: 3rem;
 }
 
 .subtitle {
@@ -68,7 +60,8 @@ main {
 }
 
 .content {
-  padding: 2rem 0;
+  margin: 0 auto;
+  padding: 2rem;
   max-width: 40rem;
 }
 
@@ -76,8 +69,18 @@ main {
   margin-top: 1rem;
 }
 
-@media screen and (min-width: 1024px) {
-  header {
+@media (min-width: 32rem) {
+  .logo {
+    width: 24rem;
+  }
+
+  .title {
+    height: 4rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .left {
     align-items: end;
     position: fixed;
     padding: 0;
@@ -87,10 +90,9 @@ main {
 
   .logo {
     margin-right: 4rem;
-    width: 28rem;
   }
 
-  main {
+  .right {
     margin-left: 50%;
     height: 100%;
   }
@@ -99,12 +101,30 @@ main {
     height: calc(50% - 7rem);
   }
 
-  .title svg {
+  .right header {
+    padding-left: 4rem;
+  }
+
+  .title {
     margin: 0 0 1.5rem 0;
-    height: 6.25rem;
   }
 
   .subtitle {
     text-align: left;
+  }
+
+  .content {
+    margin: 0;
+    padding-left: 4rem;
+  }
+}
+
+@media (min-width: 80rem) {
+  .logo {
+    width: 28rem;
+  }
+
+  .title {
+    height: 5rem;
   }
 }
