@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>INFINITELIMITS</title>
   <link rel="icon" href="icon.svg">
-  <link rel="preconnect" href="https://rsms.me/">
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <div class="left">
+  <div class="banner">
     <svg class="logo" viewBox="-250 -250 500 500">
       <g fill="none" stroke="white" stroke-width="2">
         <rect opacity="0.3" x="-175" y="-175" width="350" height="350" transform="rotate(15)" />
@@ -32,12 +30,11 @@
       </g>
     </svg>
   </div>
-  <div class="right">
-    <div class="spacer"></div>
+  <main>
     <header>
-      <svg class="title" viewBox="0 0 55 8">
+      <svg class="title infinite" viewBox="0 0 55 8">
         <title>INFINITE</title>
-        <path fill="#d80044" d="M0,0
+        <path d="M0,0
           V8 h2 V0 Z m3.5,0
           V8 h2 V3 l4,5 h2 V0 h-2 V5 l-4,-5 Z m9.5,0
           V8 h2 V5.5 h4 v-2 h-4 V2 h6 V0 Z m9.0,0
@@ -48,32 +45,65 @@
           V8 h8 v-2 h-6 V5 h4 v-2 h-4 V2 h6 V0 Z
           " />
       </svg>
-      <svg class="title" viewBox="0 0 43 8">
+      <svg class="title limits" viewBox="0 0 43 8" fill="black">
         <title>LIMITS</title>
-        <path fill="black" d="M0,0
+        <path d="M0,0
           V8 h8 v-2 h-6 V0 Z m9.0,0
           V8 h2 V0 Z m3.5,0
           V8 h2 V3 l2.5,3.125 l2.5,-3.125 V8 h2 V0 h-2 l-2.5,3.125 l-2.5,-3.125 Z m10.5,0
           V8 h2 V0 Z m3.0,0
           V2 h3 V8 h2 V2 h3 V0 Z m9.0,0
-          m7.75,2.5 q0,-2.5,-3,-2.5 h-2 q-3,0,-3,2.5 q0,2.5,3,2.5 h2 q1,0,1,0.5 q0,0.5,-1,0.5 h-2 q-1,0,-1,-0.5
-            h-2 q0,2.5,3,2.5 h2 q3,0,3,-2.5 q0,-2.5,-3,-2.5 h-2 q-1,0,-1,-0.5 q0,-0.5,1,-0.5 h2 q1,0,1,0.5 Z
+          m7.75,2.5 q0,-2.5,-3,-2.5 h-2 q-3,0,-3,2.5 q0,2.5,3,2.5 h2
+            q1,0,1,0.5 q0,0.5,-1,0.5 h-2 q-1,0,-1,-0.5
+            h-2 q0,2.5,3,2.5 h2 q3,0,3,-2.5 q0,-2.5,-3,-2.5
+            h-2 q-1,0,-1,-0.5 q0,-0.5,1,-0.5 h2 q1,0,1,0.5 Z
           " />
       </svg>
-      <p class="subtitle">ZERO TO INFINITY</p>
+      <h2 class="subtitle">ZERO TO INFINITY</h2>
     </header>
     <div class="content">
-      <p>
-        I am Daniel Li &mdash; a programmer, artist, and
-        musician who likes aesthetics and open source. I'm currently studying
-        computer science at the University of Florida.
-      </p>
-      <p>
-        <a href="https://github.com/inflmts">GitHub</a>
-        |
-        <a href="https://github.com/inflmts/website">Source</a>
-      </p>
+    <p>
+      I am Daniel Li &mdash;
+      <span class="desc" style="display: initial">
+        a programmer, artist, and musician who likes aesthetics and open source.
+      </span>
+      <span class="desc">
+        a creator who appreciates all forms of art and refuses to live passively.
+      </span>
+      <span class="desc">
+        a organizer and perfectionist who won't settle for anything less.
+      </span>
+      <span class="desc">
+        a college student on a mission to make every mistake in the book.
+      </span>
+      <span class="desc">
+        a thinker and visionary who knows that our limits are only temporary...
+        until my code crashes for the thousandth time in a row.
+      </span>
+      I'm currently studying computer science at the University of Florida.
+      Go Gators!
+    </p>
+    <p>
+      <a href="https://github.com/inflmts">GitHub</a>
+      |
+      <a href="https://github.com/inflmts/website">Source</a>
+    </p>
     </div>
-  </div>
+  </main>
+  <script>
+  const descriptions = document.querySelectorAll('.desc');
+  let theme = 0;
+  function nextTheme() {
+    descriptions[theme].style.display = null;
+    theme = (theme + 1) % 5;
+    descriptions[theme].style.display = 'initial';
+    document.documentElement.dataset.theme = theme.toString();
+  }
+  document.body.addEventListener('keydown', (ev) => {
+    if (ev.target === document.body && ev.code === 'KeyX')
+      nextTheme();
+  });
+  document.querySelector('.banner').addEventListener('click', nextTheme);
+  </script>
 </body>
 </html>

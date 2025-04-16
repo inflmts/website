@@ -1,8 +1,35 @@
+:root {
+  --theme-bg: #ff0050;
+  --theme-fg: #d80044;
+}
+
+:root[data-theme="1"] {
+  --theme-bg: #6000c0;
+  --theme-fg: #5000a0;
+}
+
+:root[data-theme="2"] {
+  --theme-bg: #0050ff;
+  --theme-fg: #0028ff;
+}
+
+:root[data-theme="3"] {
+  --theme-bg: #00ff50;
+  --theme-fg: #00d040;
+}
+
+:root[data-theme="4"] {
+  --theme-bg: #ffc000;
+  --theme-fg: #e0b000;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   border: 0;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 html, body {
@@ -11,7 +38,7 @@ html, body {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: sans-serif;
   background-color: white;
 }
 
@@ -30,26 +57,41 @@ svg {
   display: block;
 }
 
-.left {
+.banner {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem 0;
-  background-image: linear-gradient(135deg, black, #ff0050);
+  padding: 2rem 0;
+  background-image: linear-gradient(135deg, black, transparent);
+  background-color: var(--theme-bg);
+  transition: 0.5s background-color;
+  touch-action: manipulation;
+  cursor: pointer;
 }
 
 .logo {
   width: 20rem;
 }
 
-.spacer {
-  height: 4rem;
+main {
+  padding-top: 4rem;
+}
+
+main header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
-  margin: 0 auto 1rem auto;
+  margin-bottom: 1rem;
   height: 3rem;
+}
+
+.infinite {
+  fill: var(--theme-fg);
+  transition: 0.5s fill;
 }
 
 .subtitle {
@@ -65,11 +107,11 @@ svg {
   max-width: 40rem;
 }
 
-.content > * + * {
-  margin-top: 1rem;
-}
-
 @media (min-width: 32rem) {
+  .banner {
+    padding: 3rem 0;
+  }
+
   .logo {
     width: 24rem;
   }
@@ -80,7 +122,7 @@ svg {
 }
 
 @media (min-width: 64rem) {
-  .left {
+  .banner {
     align-items: end;
     position: fixed;
     padding: 0;
@@ -89,24 +131,17 @@ svg {
   }
 
   .logo {
-    margin-right: 4rem;
+    margin-right: 3rem;
   }
 
-  .right {
+  main {
     margin-left: 50%;
-    height: 100%;
+    padding-left: 3rem;
+    padding-top: calc(50vh - 7rem);
   }
 
-  .spacer {
-    height: calc(50% - 7rem);
-  }
-
-  .right header {
-    padding-left: 4rem;
-  }
-
-  .title {
-    margin: 0 0 1.5rem 0;
+  main header {
+    align-items: start;
   }
 
   .subtitle {
@@ -115,16 +150,40 @@ svg {
 
   .content {
     margin: 0;
-    padding-left: 4rem;
+    padding-left: 0;
   }
 }
 
-@media (min-width: 80rem) {
+@media (min-width: 84rem) {
   .logo {
+    margin-right: 4rem;
     width: 28rem;
   }
 
+  main {
+    padding-left: 4rem;
+  }
+
   .title {
+    margin-bottom: 1.5rem;
     height: 5rem;
   }
+
 }
+
+.content > * + * {
+  margin-top: 1rem;
+}
+
+.desc {
+  display: none;
+}
+
+@keyframes desc {
+  from {
+    background-color: #905;
+    color: white;
+  }
+}
+
+:root[data-theme] .desc { animation: 1s desc; }
