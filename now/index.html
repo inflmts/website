@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Now</title>
+  <link rel="icon" href="/icon.svg">
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #e4e4e7;
+  color: #50505a;
+  font-family: system-ui, sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#date {
+  font-size: 1.5em;
+}
+
+#counter {
+  font-size: 5em;
+  font-weight: bold;
+  color: black;
+}
+
+@media (min-width: 32rem) {
+  body {
+    font-size: 1.5rem;
+  }
+}
+
+</style>
+</head>
+<body>
+  <main>
+    <p id="date"></p>
+    <p id="counter"></p>
+  </main>
+<script>
+const dayMS = 86400000;
+const beta = 1723852800000;
+
+const dateElement = document.getElementById('date');
+const betaElement = document.getElementById('counter');
+
+function update() {
+  const date = new Date();
+  date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+  const diff = date.getTime() - beta;
+  dateElement.textContent = date.toLocaleDateString(undefined, {
+    weekday: 'short',
+    month: 'short',
+    day: '2-digit',
+    year: 'numeric'
+  });
+  betaElement.textContent = `\u03b2+${Math.floor(diff / dayMS)}`;
+  const timeout = dayMS - diff % dayMS + 10;
+  console.log(`Next update in ${timeout}ms`);
+  setTimeout(update, timeout);
+}
+
+update();
+</script>
+</body>
+</html>
