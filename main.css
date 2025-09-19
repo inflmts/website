@@ -102,8 +102,8 @@ main {
   transition: 0.5s color;
 }
 
-#logo, .title, .subtitle {
-  font-size: 1vw;
+.autoscale {
+  font-size: 1.5vh;
 }
 
 @media (max-aspect-ratio: 1.25) {
@@ -123,7 +123,7 @@ main {
     padding: 0;
   }
 
-  #logo, .title, .subtitle {
+  .autoscale {
     font-size: 1.25vh;
   }
 }
