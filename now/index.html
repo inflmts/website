@@ -19,42 +19,67 @@ html, body {
 }
 
 body {
-  background-color: #e4e4e7;
+  background-color: #eee;
   color: #50505a;
   font-family: system-ui, sans-serif;
+  line-height: 1;
+}
+
+a {
+  position: absolute;
+  display: block;
+  left: 0.5rem;
+  top: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  text-align: center;
+  line-height: 3rem;
+  border: 1px solid #ccc;
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  border-color: black;
 }
 
 main {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
   justify-content: center;
   align-items: center;
   text-align: center;
+  min-height: 100%;
 }
 
 #date {
-  font-size: 1.5em;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+#box {
+  border: 1px solid #ccc;
+  background-color: white;
+  padding: 1.25rem 1.5rem 1.5rem 1.5rem;
+  width: 16rem;
 }
 
 #counter {
+  margin-top: 0.75rem;
   font-size: 5em;
   font-weight: bold;
   color: black;
 }
-
-@media (min-width: 32rem) {
-  body {
-    font-size: 1.5rem;
-  }
-}
-
 </style>
 </head>
 <body>
+  <a href="/">/</a>
   <main>
     <p id="date"></p>
-    <p id="counter"></p>
+    <div id="box">
+      <p id="label">BETA</p>
+      <p id="counter"></p>
+    </div>
   </main>
 <script>
 const dayMS = 86400000;
@@ -65,15 +90,15 @@ const betaElement = document.getElementById('counter');
 
 function update() {
   const date = new Date();
-  date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
-  const diff = date.getTime() - beta;
   dateElement.textContent = date.toLocaleDateString(undefined, {
     weekday: 'short',
     month: 'short',
     day: '2-digit',
     year: 'numeric'
-  });
-  betaElement.textContent = `\u03b2+${Math.floor(diff / dayMS)}`;
+  }).toUpperCase();
+  date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+  const diff = date.getTime() - beta;
+  betaElement.textContent = Math.floor(diff / dayMS);
   const timeout = dayMS - diff % dayMS + 10;
   console.log(`Next update in ${timeout}ms`);
   setTimeout(update, timeout);

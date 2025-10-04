@@ -33,7 +33,6 @@ a {
 }
 
 a:hover {
-  text-decoration: none;
   background-color: var(--bg);
   color: white;
   transition: none;
@@ -49,19 +48,21 @@ svg {
   flex-direction: column;
   align-items: end;
   justify-content: center;
-  background-color: var(--bg);
-  transition: 0.5s background-color;
   left: 0;
   top: 0;
-  width: 45%;
+  width: 47%;
   height: 100%;
-  overflow: hidden;
 }
 
 #logo {
+  box-sizing: content-box;
   cursor: pointer;
-  margin-right: 2rem;
-  width: 31.25em;
+  margin: 0 2.5rem 0 0;
+  width: 28rem;
+  background-color: var(--bg);
+  background-image: radial-gradient(closest-side, transparent, #0008 75%, black);
+  transition: 0.5s background-color;
+  touch-action: manipulation;
 }
 
 main {
@@ -69,9 +70,8 @@ main {
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  margin-left: 45%;
-  padding-left: 4rem;
-  height: 100%;
+  margin-left: 47%;
+  min-height: 100%;
 }
 
 .label {
@@ -81,20 +81,24 @@ main {
 
 #what {
   padding: 0 0.125rem;
-  font-weight: 800;
+  font-weight: bold;
   background-color: #404048;
   transition: 0.5s background-color;
 }
 
 .title {
   margin-bottom: 1rem;
-  height: 5em;
+  height: 5rem;
 }
 
 .subtitle {
+  box-sizing: content-box;
   margin-bottom: 1rem;
-  height: 2em;
-  color: #60606c;
+  padding: 0.5rem;
+  height: 1.5rem;
+  color: white;
+  background-color: var(--bg);
+  transition: 0.5s background-color;
 }
 
 .infinite {
@@ -102,11 +106,13 @@ main {
   transition: 0.5s color;
 }
 
-.autoscale {
-  font-size: 1.5vh;
+@media (max-width: 72rem) {
+  #logo { width: 22.4rem; margin: 0 2rem 0 0; }
+  .title { height: 4rem; }
+  .subtitle { height: 1.2rem; }
 }
 
-@media (max-aspect-ratio: 1.25) {
+@media (max-width: 56rem) {
   #banner {
     position: static;
     display: contents;
@@ -120,10 +126,11 @@ main {
     align-items: center;
     text-align: center;
     margin: 0;
-    padding: 0;
+    padding: 2rem 0;
   }
+}
 
-  .autoscale {
-    font-size: 1.25vh;
-  }
+@media (max-width: 32rem) {
+  #logo { width: 20rem; }
+  .title { height: 3rem; }
 }

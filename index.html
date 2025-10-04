@@ -8,9 +8,9 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <main>
+<main>
   <div id="banner">
-  <svg id="logo" class="autoscale" viewBox="-250 -250 500 500" fill="white">
+  <svg id="logo" viewBox="-250 -250 500 500" fill="white">
     <title>InfiniteLimits Logo</title>
     <g fill="none" stroke="white" stroke-width="8" opacity=".7">
     <g opacity=".5">
@@ -33,7 +33,7 @@
   </svg>
   </div>
   <p class="label">I am <strong id="what">Daniel Li.</strong></p>
-  <svg class="title autoscale infinite" viewBox="0 0 74 11" fill="currentColor">
+  <svg class="title infinite" viewBox="0 0 74 11" fill="currentColor">
     <path d="M0,0
       v11 h4 v-11 z m5,0
       v11 h4 v-4.8 l3,4.8 h4 v-11 h-4 v4.8 l-3,-4.8 z m12,0
@@ -45,7 +45,7 @@
       v11 h11 v-3 h-7 v-1 h5 v-3 h-5 v-1 h7 v-3 z
       " />
   </svg>
-  <svg class="title autoscale limits" viewBox="0 0 58 11" fill="currentColor">
+  <svg class="title limits" viewBox="0 0 58 11" fill="currentColor">
     <path d="M0,0
       v11 h11 v-3 h-7 v-8 z m12,0
       v11 h4 v-11 z m5,0
@@ -59,7 +59,7 @@
         h-3.5 q-.5,0,-.5,-.5 q0,-.5,.5,-.5 h2 q.5,0,.5,.5 z
       " />
   </svg>
-  <svg class="subtitle autoscale" viewBox="0 0 157.5 11" fill="currentColor">
+  <svg class="subtitle" viewBox="0 0 157.5 11" fill="currentColor">
     <path d="M0,0
       v3 h5 l-5,5 v3 h11 v-3 h-5 l5,-5 v-3 z m12,0
       v11 h11 v-3 h-7 v-1 h5 v-3 h-5 v-1 h7 v-3 z m12,0
@@ -82,31 +82,26 @@
       l4,6 v5 h4 v-5 l4,-6 h-4 l-2,3 l-2,-3 z
       " />
   </svg>
-  <p>
+  <nav>
     <a href="https://github.com/inflmts">github</a>
     <a href="https://github.com/inflmts/website">source</a>
     <a href="/now/">now</a>
     <a href="https://fastadd.inflmts.com">fastadd</a>
     <a href="https://archer.inflmts.com">archer</a>
-  </p>
-  </main>
+  </nav>
+</main>
 <script>
 const what = document.getElementById('what');
 const whats = [
   what.textContent,
-  'writing software.',
-  'compiling code.',
-  'optimizing data structures.',
-  'updating dependencies.',
-  'designing user interfaces.',
-  'reading documentation.',
-  'manipulating data.',
-  'configuring systems.',
-  'not what you think.',
+  'an artist.',
+  'a programmer.',
+  'an engineer.',
+  'so much more.',
 ];
 let theme = 0;
 function set() {
-  document.documentElement.dataset.theme = theme % 5;
+  document.documentElement.dataset.theme = theme;
   what.textContent = whats[theme];
   what.style.backgroundColor = 'white';
   what.style.transition = 'none';
@@ -123,10 +118,9 @@ function next() {
   set();
 }
 document.body.addEventListener('keydown', (ev) => {
-  if (ev.target === document.body) {
-    if (ev.code === 'ArrowLeft') prev();
-    else if (ev.code === 'ArrowRight') next();
-  }
+  if (ev.target !== document.body) return;
+  if (ev.code === 'ArrowLeft') prev();
+  else if (ev.code === 'ArrowRight') next();
 });
 document.getElementById('logo').addEventListener('click', next);
 </script>
