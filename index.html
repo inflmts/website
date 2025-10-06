@@ -8,8 +8,8 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<main>
-  <div id="banner">
+<div id="wrapper">
+<header>
   <svg id="logo" viewBox="-250 -250 500 500" fill="white">
     <title>InfiniteLimits Logo</title>
     <g fill="none" stroke="white" stroke-width="8" opacity=".7">
@@ -31,9 +31,10 @@
        " />
     </g>
   </svg>
-  </div>
-  <p class="label">I am <strong id="what">Daniel Li.</strong></p>
-  <svg class="title infinite" viewBox="0 0 74 11" fill="currentColor">
+</header>
+<main>
+  <p id="label">I am <strong id="what">Daniel Li.</strong></p>
+  <svg id="infinite" class="title" viewBox="0 0 74 11" fill="currentColor">
     <path d="M0,0
       v11 h4 v-11 z m5,0
       v11 h4 v-4.8 l3,4.8 h4 v-11 h-4 v4.8 l-3,-4.8 z m12,0
@@ -45,7 +46,7 @@
       v11 h11 v-3 h-7 v-1 h5 v-3 h-5 v-1 h7 v-3 z
       " />
   </svg>
-  <svg class="title limits" viewBox="0 0 58 11" fill="currentColor">
+  <svg id="limits" class="title" viewBox="0 0 58 11" fill="currentColor">
     <path d="M0,0
       v11 h11 v-3 h-7 v-8 z m12,0
       v11 h4 v-11 z m5,0
@@ -59,7 +60,7 @@
         h-3.5 q-.5,0,-.5,-.5 q0,-.5,.5,-.5 h2 q.5,0,.5,.5 z
       " />
   </svg>
-  <svg class="subtitle" viewBox="0 0 157.5 11" fill="currentColor">
+  <svg id="subtitle" viewBox="0 0 157.5 11" fill="currentColor">
     <path d="M0,0
       v3 h5 l-5,5 v3 h11 v-3 h-5 l5,-5 v-3 z m12,0
       v11 h11 v-3 h-7 v-1 h5 v-3 h-5 v-1 h7 v-3 z m12,0
@@ -90,6 +91,7 @@
     <a href="https://archer.inflmts.com">archer</a>
   </nav>
 </main>
+</div>
 <script>
 const what = document.getElementById('what');
 const whats = [
@@ -97,7 +99,7 @@ const whats = [
   'an artist.',
   'a programmer.',
   'an engineer.',
-  'so much more.',
+  'not what you think.',
 ];
 let theme = 0;
 function set() {
