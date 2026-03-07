@@ -8,91 +8,87 @@
   <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<div id="wrapper">
+<div class="wrapper">
 <header>
-  <svg id="logo" viewBox="-250 -250 500 500" fill="white">
-    <title>InfiniteLimits Logo</title>
-    <g fill="none" stroke="white" stroke-width="8" opacity=".7">
-    <g opacity=".5">
-    <rect x="-172" y="-172" width="344" height="344" transform="rotate(15)" opacity=".5" />
-    <rect x="-172" y="-172" width="344" height="344" transform="rotate(45)" /></g>
-    <rect x="-172" y="-172" width="344" height="344" transform="rotate(75)" /></g>
-    <path opacity="0.5" d="
-       M -100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8 Z
-       M 100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8 Z
-       " />
-    <path d="
-       M -100,-52.8 -144,-35.2 -100,74.8 -100,24.8 -119.862,-24.855 -100,-32.8 Z
-       M -10,-110 -80,-110 -80,-28.8 -10,-56.8 Z
-       M -10,-36.8 -80,-8.8 -80,124.8 -10,96.8 Z
-       M 10,36.8 80,8.8 80,-124.8 10,-96.8 Z
-       M 10,110 80,110 80,28.8 10,56.8 Z
-       M 100,52.8 144,35.2 100,-74.8 100,-24.8 119.862,24.855 100,32.8 Z
-       " />
-    </g>
-  </svg>
-</header>
-<main>
-  <p id="label">I am <strong id="what">Daniel Li.</strong></p>
-  <svg id="infinite" class="title" viewBox="0 0 74 11" fill="currentColor">
-    <path d="M0,0
-      v11 h4 v-11 z m5,0
-      v11 h4 v-4.8 l3,4.8 h4 v-11 h-4 v4.8 l-3,-4.8 z m12,0
-      v11 h4 v-4 h5 v-3 h-5 v-1 h7 v-3 z m12,0
-      v11 h4 v-11 z m5,0
-      v11 h4 v-4.8 l3,4.8 h4 v-11 h-4 v4.8 l-3,-4.8 z m12,0
-      v11 h4 v-11 z m5,0
-      v3 h3.5 v8 h4 v-8 h3.5 v-3 z m12,0
-      v11 h11 v-3 h-7 v-1 h5 v-3 h-5 v-1 h7 v-3 z
-      " />
-  </svg>
-  <svg id="limits" class="title" viewBox="0 0 58 11" fill="currentColor">
-    <path d="M0,0
-      v11 h11 v-3 h-7 v-8 z m12,0
-      v11 h4 v-11 z m5,0
-      v11 h4 v-5.5 l2,2.7 l2,-2.7 v5.5 h4 v-11 h-4 l-2,2.7 l-2,-2.7 z m13,0
-      v11 h4 v-11 z m5,0
-      v3 h3.5 v8 h4 v-8 h3.5 v-3 z m12,0
-      m11,3.5
-        v-.5 q0,-3,-3,-3 h-5 q-3,0,-3,3 v1 q0,3,3,3
-        h3.5 q.5,0,.5,.5 q0,.5,-.5,.5 h-2 q-.5,0,-.5,-.5 h-4
-        v.5 q0,3,3,3 h5 q3,0,3,-3 v-1 q0,-3,-3,-3
-        h-3.5 q-.5,0,-.5,-.5 q0,-.5,.5,-.5 h2 q.5,0,.5,.5 z
-      " />
-  </svg>
-  <svg id="subtitle" viewBox="0 0 157.5 11" fill="currentColor">
-    <path d="M0,0
-      v3 h5 l-5,5 v3 h11 v-3 h-5 l5,-5 v-3 z m12,0
-      v11 h11 v-3 h-7 v-1 h5 v-3 h-5 v-1 h7 v-3 z m12,0
-      v11 h4 v-4 h1 l2,4 h4 l-3.5,-7 h-3.5 v-1 h3 v4 h1
-        q3,0,3,-3 v-1 q0,-3,-3,-3 z m12,8
-      q0,3,3,3 h5 q3,0,3,-3 v-5 q0,-3,-3,-3 h-5 q-3,0,-3,3 z m4,-4
-        q0,-1,1,-1 h1 q1,0,1,1 v3 q0,1,-1,1 h-1 q-1,0,-1,-1 z m13,-4
 
-      V3 h3.5 V11 h4 V3 h3.5 V0 z m12,8
-      q0,3,3,3 h5 q3,0,3,-3 v-5 q0,-3,-3,-3 h-5 q-3,0,-3,3 z m4,-4
-        q0,-1,1,-1 h1 q1,0,1,1 v3 q0,1,-1,1 h-1 q-1,0,-1,-1 z m14,-4
+<svg class="title infinite" viewBox="0 0 66.25 10" fill="currentColor" aria-label="INFINITE">
+  <path d="M0,0
+    v10 h4 v-10 z m5,0
+    v10 h4 v-5 l2,5 h4 v-10 h-4 v5 l-2,-5 z m11,0
+    v10 h4 v-4 h4 v-2 h-4 v-2 h5 v-2 z m9.75,0
+    v10 h4 v-10 z m5,0
+    v10 h4 v-5 l2,5 h4 v-10 h-4 v5 l-2,-5 z m11,0
+    v10 h4 v-10 z m5,0
+    m-.25,0 v2 h3 v8 h4 v-8 h3 v-2 z m10.75,0
+    v10 h9 v-2 h-5 v-2 h4 v-2 h-4 v-2 h5 v-2 z
+    " />
+</svg>
 
-      v11 h4 V0 z m5,0
-      v11 h4 v-4.8 l3,4.8 h4 v-11 h-4 v4.8 l-3,-4.8 z m12,0
-      v11 h4 V7 h5 v-3 h-5 V3 h7 V0 z m12,0
-      v11 h4 V0 z m5,0
-      v11 h4 v-4.8 l3,4.8 h4 v-11 h-4 v4.8 l-3,-4.8 z m12,0
-      v11 h4 V0 z m5,0
-      v3 h3.5 V11 h4 V3 h3.5 V0 z m11.5,0
-      l4,6 v5 h4 v-5 l4,-6 h-4 l-2,3 l-2,-3 z
-      " />
-  </svg>
-  <nav>
-    <a href="https://github.com/inflmts">github</a>
-    <a href="https://github.com/inflmts/website">source</a>
-    <a href="/now/">now</a>
-    <a href="https://fastadd.inflmts.com">fastadd</a>
-    <a href="https://archer.inflmts.com">archer</a>
-  </nav>
-</main>
+<div class="bottom">
+<svg id="logo" viewBox="-144 -124.8 288 249.6" fill="currentColor">
+  <title>InfiniteLimits Logo v5.4</title>
+  <path opacity="0.375" d="
+     M -100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8 Z
+     M 100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8 Z
+     " />
+  <path d="
+     M -100,-52.8 -144,-35.2 -100,74.8 -100,24.8 -119.862,-24.855 -100,-32.8 Z
+     M -10,-110 -80,-110 -80,-28.8 -10,-56.8 Z
+     M -10,-36.8 -80,-8.8 -80,124.8 -10,96.8 Z
+     M 10,36.8 80,8.8 80,-124.8 10,-96.8 Z
+     M 10,110 80,110 80,28.8 10,56.8 Z
+     M 100,52.8 144,35.2 100,-74.8 100,-24.8 119.862,24.855 100,32.8 Z
+     " />
+  </g>
+</svg>
+<svg class="title limits" viewBox="0 0 53.5 10" fill="currentColor" aria-label="LIMITS">
+  <path d="M0,0
+    v10 h9 v-2 h-5 v-8 z m10,0
+    v10 h4 v-10 z m5,0
+    v10 h4 v-5 l2,5 l2,-5 v5 h4 v-10 h-4 l-2,5 l-2,-5 z m13,0
+    v10 h4 v-10 z m5,0
+    m-.25,0 v2 h3 v8 h4 v-8 h3 v-2 z m10.75,0
+    m10,3
+      v0 q0,-3,-3,-3 h-4 q-3,0,-3,3 q0,3,3,3
+      h2 q1,0,1,1 q0,1,-.75,1 h-.5 q-.75,0,-.75,-1 h-4
+      v0 q0,3,3,3 h4 q3,0,3,-3 q0,-3,-3,-3
+      h-2 q-1,0,-1,-1 q0,-1,.75,-1 h.5 q.75,0,.75,1 z
+    " />
+</svg>
+
 </div>
-<script>
+
+</header>
+
+<p class="motto">
+&ldquo;Zero to infinity&rdquo;
+</p>
+
+<section>
+<p>
+I am <strong>Daniel Li</strong>,
+a programmer, artist, and musician who likes aesthetics and open source.
+I'm currently studying computer science at the University of Florida.
+Welcome to my personal website!
+</p>
+</section>
+
+<section>
+<table>
+<tr><th>social:</th><td>
+  <a href="https://github.com/inflmts">github</a>
+  <a href="https://linkedin.com/in/inflmts">linkedin</a>
+</td></tr>
+<tr><th>projects:</th><td>
+  <a href="/now/">now</a>
+  <a href="https://fastadd.inflmts.com">fastadd</a>
+  <a href="https://archer.inflmts.com">archer</a>
+</td></tr>
+</table>
+</section>
+
+</div>
+<script type="disabled">
 const what = document.getElementById('what');
 const whats = [
   what.textContent,

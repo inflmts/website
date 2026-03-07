@@ -15,6 +15,7 @@
 
 body {
   font-family: sans-serif;
+  line-height: 1.5;
   background-color: black;
   color: white;
   display: flex;
@@ -25,53 +26,146 @@ body {
 a {
   font-weight: bold;
   text-decoration: underline;
-  color: var(--fg);
-  transition: 0.5s color;
+  color: white;
 }
 
 a:hover {
+  text-decoration: none;
+  background-color: white;
+  color: black;
+}
+
+strong {
+  padding: 0 0.25rem;
   background-color: var(--bg);
-  color: white;
-  transition: none;
 }
 
 svg {
   display: block;
+  flex-shrink: 0;
 }
 
-#wrapper {
-  display: flex;
-  margin: 2rem auto;
+table {
+  border-spacing: 0;
+}
+
+th {
+  vertical-align: top;
+  text-align: left;
+  padding-right: 0.5rem;
+  color: var(--fg);
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+header {
+  margin-bottom: 0.5rem;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
 }
 
 #logo {
-  cursor: pointer;
-  width: 28rem;
-  background-color: var(--bg);
-  background-image: radial-gradient(closest-side, transparent, #0008 75%, black);
+  /* border: 2px solid white; */
+  width: 9rem;
+  /* background-color: var(--bg); */
+  /* background-image: radial-gradient(closest-side, transparent, #0008 75%, black); */
+  /* background-image: radial-gradient(closest-side, black, #0008 25%, transparent); */
   transition: 0.5s background-color;
   touch-action: manipulation;
 }
 
 main {
-  margin: 5rem 0 0 2.5rem;
+  margin: 0 auto;
+  /* width: 72rem; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
 }
 
-#label {
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-}
-
-#what {
-  padding: 0 0.125rem;
+.motto {
+  padding: 0.125rem 0.5rem;
+  background-color: white;
+  color: black;
   font-weight: bold;
-  background-color: #404048;
-  transition: 0.5s background-color;
+  text-align: center;
+}
+
+.titles {
+  display: none;
 }
 
 .title {
-  margin-bottom: 1rem;
-  height: 5rem;
+  height: 3.75rem;
+}
+
+#logo {
+  color: var(--fg);
+}
+
+@media (min-width: 38rem) {
+  .wrapper {
+    padding: 0;
+    width: 36rem;
+  }
+
+  #logo {
+    width: 5.4rem;
+  }
+
+  .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem auto 0 auto;
+  }
+
+  .title {
+    height: 5rem;
+  }
+
+  .infinite {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 70rem) {
+  .wrapper {
+    width: 68rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #logo {
+  }
+
+  header {
+    grid-column: span 2;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .motto {
+    grid-column: span 2;
+  }
+
+  .bottom {
+    display: contents;
+  }
+
+  .title {
+    margin: 0;
+  }
+
+  .limits {
+    margin-left: 0.5rem;
+  }
 }
 
 #subtitle {
@@ -89,13 +183,7 @@ main {
   transition: 0.5s color;
 }
 
-@media (max-width: 72rem) {
-  main { margin: 4rem 0 0 2rem; }
-  #logo { width: 22.4rem; }
-  .title { height: 4rem; }
-  #subtitle { height: 1.2rem; }
-}
-
+/*
 @media (max-width: 56rem) {
   #wrapper {
     display: block;
@@ -116,3 +204,4 @@ main {
   #logo { width: 20rem; }
   .title { height: 3rem; }
 }
+*/
