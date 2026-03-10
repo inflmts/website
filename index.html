@@ -9,38 +9,10 @@
 </head>
 <body>
 <div class="wrapper">
+
 <header>
-
-<svg class="title infinite" viewBox="0 0 66.25 10" fill="currentColor" aria-label="INFINITE">
-  <path d="M0,0
-    v10 h4 v-10 z m5,0
-    v10 h4 v-5 l2,5 h4 v-10 h-4 v5 l-2,-5 z m11,0
-    v10 h4 v-4 h4 v-2 h-4 v-2 h5 v-2 z m9.75,0
-    v10 h4 v-10 z m5,0
-    v10 h4 v-5 l2,5 h4 v-10 h-4 v5 l-2,-5 z m11,0
-    v10 h4 v-10 z m5,0
-    m-.25,0 v2 h3 v8 h4 v-8 h3 v-2 z m10.75,0
-    v10 h9 v-2 h-5 v-2 h4 v-2 h-4 v-2 h5 v-2 z
-    " />
-</svg>
-
-<div class="bottom">
-<svg class="title limits" viewBox="0 0 53.5 10" fill="currentColor" aria-label="LIMITS">
-  <path d="M0,0
-    v10 h9 v-2 h-5 v-8 z m10,0
-    v10 h4 v-10 z m5,0
-    v10 h4 v-5 l2,5 l2,-5 v5 h4 v-10 h-4 l-2,5 l-2,-5 z m13,0
-    v10 h4 v-10 z m5,0
-    m-.25,0 v2 h3 v8 h4 v-8 h3 v-2 z m10.75,0
-    m10,3
-      v0 q0,-3,-3,-3 h-4 q-3,0,-3,3 q0,3,3,3
-      h2 q1,0,1,1 q0,1,-.75,1 h-.5 q-.75,0,-.75,-1 h-4
-      v0 q0,3,3,3 h4 q3,0,3,-3 q0,-3,-3,-3
-      h-2 q-1,0,-1,-1 q0,-1,.75,-1 h.5 q.75,0,.75,1 z
-    " />
-</svg>
-<svg id="logo" viewBox="-144 -124.8 288 249.6" fill="currentColor">
-  <title>InfiniteLimits Logo v5.4</title>
+<button id="logo" title="InfiniteLimits Logo v5.4">
+<svg viewBox="-176 -176 352 352" fill="white">
   <path opacity="0.375" d="
      M -100.2,24.3 -100.2,74.3 -80,124.8 -80,74.8 Z
      M 100.2,-24.3 100.2,-74.3 80,-124.8 80,-74.8 Z
@@ -55,51 +27,63 @@
      " />
   </g>
 </svg>
-</div>
-
+</button>
 </header>
 
-<p class="motto">
-&ldquo;Zero to infinity&rdquo;
-</p>
-
-<section>
+<main>
+<svg class="title infinite" viewBox="0 0 66.25 10" fill="currentColor" aria-label="INFINITE">
+  <path d="M0,0
+    v10 h4 v-10 z m5,0
+    v10 h4 v-5 l2,5 h4 v-10 h-4 v5 l-2,-5 z m11,0
+    v10 h4 v-3.5 h4 v-2.5 h-4 v-1 h5 v-3 z m9.75,0
+    v10 h4 v-10 z m5,0
+    v10 h4 v-5 l2,5 h4 v-10 h-4 v5 l-2,-5 z m11,0
+    v10 h4 v-10 z m5,0
+    m-.25,0 v3 h3 v7 h4 v-7 h3 v-3 z m10.75,0
+    v10 h9 v-2.5 h-5 v-1 h4 v-2.5 h-4 v-1 h5 v-3 z
+    " />
+</svg>
+<svg class="title limits" viewBox="0 0 53.5 10" fill="currentColor" aria-label="LIMITS">
+  <path d="M0,0
+    v10 h9 v-2.5 h-5 v-7.5 z m10,0
+    v10 h4 v-10 z m5,0
+    v10 h4 v-5 l2,5 l2,-5 v5 h4 v-10 h-4 l-2,5 l-2,-5 z m13,0
+    v10 h4 v-10 z m5,0
+    m-.25,0 v3 h3 v7 h4 v-7 h3 v-3 z m10.75,0
+    m10,3
+      v0 q0,-3,-3,-3 h-4 q-3,0,-3,3 q0,3,3,3
+      h2 q1,0,1,1 q0,1,-.75,1 h-.5 q-.75,0,-.75,-1 h-4
+      v0 q0,3,3,3 h4 q3,0,3,-3 q0,-3,-3,-3
+      h-2 q-1,0,-1,-1 q0,-1,.75,-1 h.5 q.75,0,.75,1 z
+    " />
+</svg>
+<blockquote class="motto">
+Zero to infinity
+</blockquote>
 <p>
 I am <strong>Daniel Li</strong>,
 a programmer, artist, and musician who likes aesthetics and open source.
 I'm currently studying computer science at the University of Florida.
 Welcome to my personal website!
 </p>
-</section>
-
-<section>
-<table>
-<tr><th>social:</th><td>
-  <a href="https://github.com/inflmts">github</a>
-  <a href="https://linkedin.com/in/inflmts">linkedin</a>
-</td></tr>
-<tr><th>projects:</th><td>
-  <a href="/now/">now</a>
-  <a href="https://fastadd.inflmts.com">fastadd</a>
-  <a href="https://archer.inflmts.com">archer</a>
-</td></tr>
-</table>
-</section>
+</main>
 
 </div>
 <script>
 let theme = 0;
+function set() {
+  document.documentElement.dataset.theme = theme;
+}
 function prev() {
   if (--theme < 0) theme = 5;
-  document.documentElement.dataset.theme = theme;
+  set();
 }
 function next() {
   if (++theme > 5) theme = 0;
-  document.documentElement.dataset.theme = theme;
+  set();
 }
 document.body.addEventListener('keydown', (ev) => {
-  if (ev.target !== document.body);
-  else if (ev.code === 'ArrowLeft') prev();
+  if (ev.code === 'ArrowLeft') prev();
   else if (ev.code === 'ArrowRight') next();
 });
 document.getElementById('logo').addEventListener('click', next);
