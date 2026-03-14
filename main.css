@@ -3,7 +3,7 @@
 :root[data-theme="2"] { --fg: #ffe000; --bg: #403800; }
 :root[data-theme="3"] { --fg: #00ff50; --bg: #004014; }
 :root[data-theme="4"] { --fg: #2080ff; --bg: #082040; }
-:root[data-theme="5"] { --fg: #a000ff; --bg: #280040; }
+:root[data-theme="5"] { --fg: #c000ff; --bg: #300040; }
 
 * {
   box-sizing: border-box;
@@ -27,6 +27,8 @@ body {
   justify-content: center;
   min-height: 100vh;
   gap: 2rem;
+  overflow: hidden;
+  min-width: min-content;
 }
 
 a {
@@ -57,9 +59,21 @@ svg {
   box-sizing: content-box;
   width: 22rem;
   background-color: var(--bg);
+  color: var(--fg);
   border: 0.5rem solid var(--fg);
-  transition: 0.5s border-color, 0.5s background-color;
+  transition: 0.5s background-color, 0.5s color, 0.5s border-color;
   cursor: pointer;
+}
+
+.decoration {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.5;
+  pointer-events: none;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
 }
 
 .title {
@@ -75,7 +89,7 @@ svg {
   position: relative;
   padding: 0.125rem 0.5rem;
   background-color: var(--fg);
-  color: var(--bg);
+  color: black;
   transition: 0.5s background-color, 0.5s color;
   font-weight: bold;
 }
@@ -102,6 +116,10 @@ h2 + * {
   .wrapper {
     flex-direction: column;
     gap: 0.5rem;
+  }
+
+  .decoration {
+    transform: matrix(0, 1, 1, 0, 0, 0);
   }
 
   .title {
