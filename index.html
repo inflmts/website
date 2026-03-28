@@ -34,43 +34,46 @@
 </header>
 
 <main>
-<svg class="title infinite" viewBox="0 0 46 8" fill="currentColor">
+<svg class="title infinite" viewBox="0 0 48 8" fill="currentColor">
   <title>INFINITE</title>
-  <path opacity=".5" d="M18,2
-    v1 h3 v-1 z m12,0
-    v1 h3 v-1 z m7,-2
-    v2 h3.5 v-2 z
+  <path opacity="0.5" d="M11,0
+    v2 h12 v-2 z m2,2
+    v1 h3 v-1 z m6,0
+    v1 h3 v-1 z m11,-2
+    v2 h2 v-2 z m2,2
+    v1 h3 v-1 z m8,0
+    v1 h3 v-1 z
     " />
   <path d="M0,0
     v8 h3 v-8 z m4,0
-    v8 h3 v-5 l1,1 v4 h3 v-8 h-3 v2 l-2,-2 z m8,0
-    v8 h3 v-3 h2 v-2 h-2 v-1 h6 v-2 z m6,3
+    v8 h3 v-4 l2,4 h3 v-5.8 l-1.1,-2.2 h-1.9 v4 l-2,-4 z m8,0
+    l1,2 h9 v-2 z m1,3 v5 h3 v-3 h2 v-2 z m6,0
     v5 h3 v-5 z m4,-3
-    v8 h3 v-5 l1,1 v4 h3 v-8 h-3 v2 l-2,-2 z m8,3
-    v5 h3 v-5 z m0,-3
-    v2 h4 v6 h3 v-6.4 l2,-1.6 z m8,2
-    v6 h8 v-2 h-5 v-1 h4 v-1.5 h-4 v-1 h5 v-2.5 h-5.5 z
+    v8 h3 v-4 l2,4 h3 v-5.8 l-1.1,-2.2 h-1.9 v4 l-2,-4 z m9,3
+    v5 h3 v-5 z m-1,-3
+    l1,2 h4 v6 h3 v-6 h8 v-2 z m9,3
+    v5 h8 l-1,-2 h-4 v-1 h3 v-2 z
     " />
 </svg>
-<svg class="title limits" viewBox="0 0 36 8" fill="currentColor">
+<svg class="title limits" viewBox="0 0 35 8" fill="currentColor">
   <title>LIMITS</title>
-  <path opacity=".5" d="M4,5
-    v1 h3 v-1 z m16,-3
-    v1 h3 v-1 z m7,-2
-    v2 h3.5 v-2 z
+  <path opacity="0.375" d="M4,5
+    v1 h3 v-1 z m3,1
+    v2 h2 v-2 z m11,-6
+    v2 h1 v-2 z m1,2
+    v1 h3 v-1 z m6,4
+    v2 h2 v-2 z
     " />
   <path d="M0,0
-    v8 h7 v-2 h-4 v-6 z m4,0
+    v8 h8 l-1,-2 h-4 v-6 z m4,0
     v5 h3 v-5 z m4,0
-    v8 h3 v-6 l1,1 v5 h3 v-5 l1,-1 v6 h3 v-8 h-4 l-1.5,1.5 l-1.5,-1.5 z m12,3
+    v5.8 l1.1,2.2 h1.9 v-4 l2,4 l2,-4 v4 h3 v-8 h-3 l-2,4 l-2,-4 z m11,3
     v5 h3 v-5 z m0,-3
-    v2 h4 v6 h3 v-6.4 l2,-1.6 z m8,2
-    v3 h5 v1 h-5 v2 h8 v-4.5 h-5 v-1 h5 v-2.5 h-5.5 z
+    v2 h4 v6 h1.9 l1.1,-2.2 v-3.8 h8 l1,-2 z m9,3
+    v2 h3 v1 h-4 l-1,2 h8 v-5 z
     " />
 </svg>
-<blockquote class="motto">
-Zero to infinity
-</blockquote>
+<p id="motto">ZERO TO INFINITY</p>
 <p>
 I am <strong>Daniel Li</strong>,
 a programmer, artist, and musician who likes aesthetics and open source.
@@ -81,9 +84,19 @@ Welcome to my personal website!
 
 </div>
 <script>
+const motto = document.querySelector('#motto');
+const subtitles = [
+  motto.textContent,
+  'WATCH THIS',
+  'CHALLENGE ACCEPTED',
+  'DON\'T STOP',
+  'BRING IT ON',
+  'NO HOLDING BACK',
+];
 let theme = 0;
 function set() {
   document.documentElement.dataset.theme = theme;
+  motto.textContent = subtitles[theme];
 }
 function prev() {
   if (--theme < 0) theme = 5;
