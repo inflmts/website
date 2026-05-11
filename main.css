@@ -58,27 +58,32 @@ svg {
   position: relative;
   box-sizing: content-box;
   width: 22rem;
-  background-color: var(--bg);
+  /* width: 23rem; */
+  background-color: var(--fg);
   color: var(--fg);
-  border: 0.5rem solid var(--fg);
+  border: 0.75rem solid transparent;
+  /* padding: 0.5rem; */
   transition: 0.5s linear background-color, 0.5s color, 0.5s border-color;
   cursor: pointer;
 }
 
 #logo:hover {
   outline: 0.25rem solid white;
-  outline-offset: -0.75rem;
+  outline-offset: -1rem;
 }
 
 .decoration {
   position: absolute;
   z-index: -1;
-  opacity: 0.5;
   pointer-events: none;
   top: -50%;
   right: -50%;
   bottom: -50%;
   left: -50%;
+}
+
+#logo svg {
+  background-color: rgba(0 0 0 / 0.625);
 }
 
 .title {
@@ -92,11 +97,8 @@ svg {
 
 #motto {
   position: relative;
-  border: solid rgba(0 0 0 / 0.25);
-  border-width: 0 0.5rem;
+  border: 0.125rem solid white;
   padding: 0.125rem 0.5rem;
-  background-color: var(--fg);
-  color: black;
   transition: 0.5s background-color, 0.5s color;
   font-weight: bold;
   letter-spacing: 2px;
@@ -104,7 +106,7 @@ svg {
 
 main {
   padding: 1rem;
-  max-width: 36rem;
+  max-width: 40rem;
 }
 
 main > * + * {
@@ -120,7 +122,7 @@ h2 + * {
   margin-top: 0;
 }
 
-@media (width < 64rem) {
+@media (width < 68rem) {
   .wrapper {
     flex-direction: column;
     gap: 0.5rem;
@@ -133,7 +135,7 @@ h2 + * {
   .title {
     margin-left: auto;
     margin-right: auto;
-    height: 4rem;
+    height: 3.75rem;
   }
 
   main {
@@ -142,6 +144,6 @@ h2 + * {
 }
 
 @media (width < 28rem) {
-  .title { height: 3rem; }
+  .title { height: 2.5rem; }
   #logo { width: 11rem; }
 }
