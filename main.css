@@ -92,14 +92,14 @@ svg {
 
 main {
   padding: 1rem;
-  max-width: 40.5rem;
+  max-width: 40rem;
 }
 
 main > * + * {
   margin-top: 1rem;
 }
 
-@media (width < 68rem) {
+@media (width < 67rem) {
   .wrapper {
     flex-direction: column;
     gap: 0.5rem;
@@ -120,7 +120,7 @@ main > * + * {
   }
 }
 
-@media (width < 28rem) {
+@media (width < 32rem) {
   .title { height: 2.5rem; }
   #logo { width: 11rem; }
 }
