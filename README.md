@@ -1,12 +1,21 @@
 # The InfiniteLimits Website
 
 This is the source code for <https://inflmts.com>.
+This project uses [Eleventy](https://www.11ty.dev).
 
-This project doesn't have any dependencies, however
-[Vite](https://vite.dev) is useful for development.
-You can install it globally and run it directly from the command line:
+## Getting Started
+
+Install dependencies,
+then bring up a development server at <http://localhost:8080>:
 
 ```
-npm install -g vite
-vite
+pnpm install
+pnpm dev
+```
+
+## Build
+
+```
+rm -rf _site
+pnpm build
 ```

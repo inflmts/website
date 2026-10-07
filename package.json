@@ -3,6 +3,14 @@
   "name": "website",
   "description": "The InfiniteLimits Website",
   "author": "Daniel Li <inflmts@gmail.com>",
+  "homepage": "https://inflmts.com",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@11ty/eleventy": ">=3"
+  },
+  "scripts": {
+    "dev": "eleventy --serve --incremental",
+    "build": "eleventy"
+  }
 }
